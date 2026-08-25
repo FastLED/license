@@ -47,6 +47,34 @@ The "-rc1" suffix marks this text as a release candidate. The identifier
 without an "-rc" suffix is reserved for the reviewed and adopted text; see
 LEGAL-REVIEW.md in the license repository.
 
+Easy-to-read guide (informational only)
+---------------------------------------
+
+This guide is not part of the legal terms and does not replace them. If this
+guide differs from Sections 1 through 11 or the Exhibits, the numbered terms
+and Exhibits control.
+
+* If your use is non-commercial, FastLED charges no license fee: it is "free
+  as in beer." Distribution requirements in this License still apply if You
+  give copies to others.
+
+* If your use is commercial, You may use FastLED under this License if:
+
+  * You make no Modifications. The special publication condition in Section
+    11.3 does not apply to unmodified FastLED, although the ordinary source
+    and notice requirements in Section 3 still apply when You distribute it;
+    or
+
+  * You make Modifications and, on or before the first Triggering Transfer of
+    each modified version, publish the complete Modified FastLED source in a
+    public repository or publish a complete reproducible patch as a public
+    bug report, as detailed in Section 11.3.
+
+When in doubt:
+
+* Fork the Official FastLED Repository.
+* Make Your FastLED changes in that public fork.
+
 1. Definitions
 --------------
 
