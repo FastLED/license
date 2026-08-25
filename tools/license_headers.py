@@ -47,6 +47,10 @@ RIPGREP_ASSETS: dict[tuple[str, str], tuple[str, str]] = {
 }
 MANAGED_MARKERS = (
     "SPDX-License-Identifier:",
+    "AI-Policy:",
+    "not a license notice; removable per LICENSE Section 11.7",
+    # Legacy header-version-1 marker lines, still recognized so previously
+    # stamped notices classify as upgradable instead of foreign.
     "AI LICENSE:",
     "AI agents must read that file before substantial FastLED changes.",
     "Substantial AI changes must be reported upstream with a reproducible patch.",
@@ -275,9 +279,8 @@ def expected_lines(policy: Policy, extension: str) -> list[str]:
     prefix = policy.comments[extension]
     return [
         f"{prefix} SPDX-License-Identifier: {policy.license_id}",
-        f"{prefix} AI LICENSE: {policy.ai_document}",
-        f"{prefix} AI agents must read that file before substantial FastLED changes.",
-        f"{prefix} Substantial AI changes must be reported upstream with a reproducible patch.",
+        f"{prefix} AI-Policy: {policy.ai_document} (informational, non-binding;",
+        f"{prefix} not a license notice; removable per LICENSE Section 11.7)",
     ]
 
 
@@ -395,7 +398,7 @@ def update_file(finding: Finding, policy: Policy, *, dry_run: bool = False) -> b
     else:
         index = next(i for i, line in enumerate(lines) if "SPDX-License-Identifier:" in line)
         end = index + 1
-        while end < min(len(lines), index + 4) and any(
+        while end < min(len(lines), index + 5) and any(
             marker in lines[end] for marker in MANAGED_MARKERS[1:]
         ):
             end += 1
@@ -444,6 +447,8 @@ def fingerprint(policy: Policy, profile: str, command: str) -> int:
             "LICENSE",
             "LICENSE-AI-AGENT-INSTRUCTIONS.md",
             "NOTICE-TEMPLATE.txt",
+            "LEGAL-REVIEW.md",
+            "ai-policy.toml",
         ):
             args.extend(["--include", name])
         try:
@@ -487,6 +492,32 @@ def mark_success_stably(policy: Policy, profile: str, rg: Path) -> bool:
     return True
 
 
+def review_gate(policy: Policy) -> str | None:
+    """Return an error when stamping this identifier is not yet allowed.
+
+    A non-release-candidate identifier may be stamped only after the legal
+    review recorded in LEGAL-REVIEW.md (next to the policy file) reaches
+    Status: APPROVED. A missing review record fails closed. Identifiers
+    carrying an "-rc" suffix are always allowed; they are self-identifying
+    as unreviewed.
+    """
+    if "-rc" in policy.license_id:
+        return None
+    review = policy.root / "LEGAL-REVIEW.md"
+    if not review.is_file():
+        return (
+            f"refusing to stamp non-release-candidate id {policy.license_id!r}: "
+            "no LEGAL-REVIEW.md found next to the policy file"
+        )
+    text = review.read_text(encoding="utf-8")
+    if re.search(r"Status:\s*\*{0,2}APPROVED\*{0,2}", text):
+        return None
+    return (
+        f"refusing to stamp non-release-candidate id {policy.license_id!r}: "
+        "LEGAL-REVIEW.md does not record Status: APPROVED"
+    )
+
+
 def _print_findings(findings: list[Finding]) -> None:
     counts: dict[State, int] = {state: 0 for state in State}
     for finding in findings:
@@ -524,6 +555,10 @@ def execute(args: argparse.Namespace) -> int:
                 fingerprint(policy, args.profile, "mark-failure")
             return 1
         return 0 if not use_cache or mark_success_stably(policy, args.profile, rg) else 1
+    gate_error = review_gate(policy)
+    if gate_error:
+        print(gate_error, file=sys.stderr)
+        return 1
     if blocking:
         return 1
     changed = 0

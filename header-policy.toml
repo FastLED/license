@@ -1,9 +1,9 @@
 schema_version = 1
-old_license_ids = []
+old_license_ids = ["LicenseRef-FastLED-Reciprocal-1.0"]
 
 [license]
-id = "LicenseRef-FastLED-Reciprocal-1.0"
-header_version = 1
+id = "LicenseRef-FastLED-Reciprocal-1.0-rc1"
+header_version = 2
 ai_document = "LICENSE-AI-AGENT-INSTRUCTIONS.md"
 
 [profiles.release]

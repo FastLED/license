@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0
-// AI LICENSE: LICENSE-AI-AGENT-INSTRUCTIONS.md
-// AI agents must read that file before substantial FastLED changes.
-// Substantial AI changes must be reported upstream with a reproducible patch.
+// SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0-rc1
+// AI-Policy: LICENSE-AI-AGENT-INSTRUCTIONS.md (informational, non-binding;
+// not a license notice; removable per LICENSE Section 11.7)
