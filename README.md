@@ -58,6 +58,8 @@ the copyright grant, not contributors' patent grants.
 - `NOTICE-TEMPLATE-MIT-LEGACY.txt` — additive header variant for files
   with surviving MIT-era third-party authorship.
 - `LEGAL-REVIEW.md` — review gate, applied decisions, attorney checklist.
+- `paralegal-research/` — indexed, preliminary legal research, reusable
+  authority notes, research workflow, and future-question backlog.
 - `header-policy.toml` and `header-policy.schema.json` — policy format and
   an integration example.
 - `tools/license_headers.py` — one-command inventory, check, update, and
