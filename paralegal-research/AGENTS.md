@@ -3,6 +3,10 @@
 These instructions apply throughout `paralegal-research/`. Read them before
 doing legal research for this repository.
 
+Read `TAXONOMY.md` before assigning metadata or describing the weight of an
+authority. For systematic research, use `templates/SEARCH-LOG.md` and preserve
+negative searches and unresolved leads.
+
 ## 1. Route the question before researching
 
 Normalize the request into five fields:
@@ -16,7 +20,9 @@ Normalize the request into five fields:
   specific performance, evidence, or procedure;
 - **time/version** — relevant license version, product release, and date.
 
-Then read `INDEX.md` and search before creating anything. Start with:
+Then read `ANSWERING-GUIDE.md`, route through `PROPOSITION-MAP.md`, and
+check `INDEX.md` plus `authorities/INDEX.md` before creating anything. Read
+`COVERAGE.md` when the question touches a known gap. Start with:
 
 ```console
 rg -n -i "<key phrase>|<synonym>|<case>|<statute>" paralegal-research LICENSE LEGAL-REVIEW.md README.md
@@ -102,13 +108,19 @@ Every completed research pass must:
 
 1. update the canonical matter rather than only a chat or issue;
 2. add or update authority cards where warranted;
-3. update `INDEX.md` in the same change;
+3. update `INDEX.md` for matters and `authorities/INDEX.md` for reusable
+   authorities in the same change;
 4. link related and superseded matters in both directions;
 5. state facts, assumptions, contrary authority, uncertainty, and open
    questions;
 6. use absolute dates and set `last_verified` to the actual verification date;
 7. distinguish a descriptive conclusion from a recommendation;
 8. leave the license text unchanged unless drafting was expressly requested.
+
+For a concurrent research swarm, the coordinator may reserve non-overlapping
+ID ranges. Each research agent writes only its assigned matter drafts and
+authority cards. The coordinator alone updates shared indexes, deduplicates
+authorities, and performs the final cross-link pass.
 
 ## 5. GitHub and external actions
 
@@ -127,6 +139,8 @@ Before declaring a matter answered, verify:
 - requested relief is not described as awarded relief;
 - current cases and statutes were checked recently;
 - holdings are separated from settlements and commentary;
+- every new `PR-####` and `AUTH-####` identifier appears in its canonical
+  index and is not duplicated;
 - the memo explains what would change the answer;
 - local links resolve and `git diff --check` passes;
 - legal review is not implied unless `legal_review: approved` is supported by

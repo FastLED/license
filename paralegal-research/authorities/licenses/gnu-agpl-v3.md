@@ -3,11 +3,21 @@ id: AUTH-0007
 title: GNU Affero General Public License version 3
 authority_type: license
 jurisdiction: not-applicable
+court: Free Software Foundation, Inc. (license publisher)
 date: 2007-11-19
 authority_status: current-version-3
+procedural_posture: not-applicable
+precedential_weight: not-applicable
+licenses: [GNU Affero General Public License version 3]
+topics: [license-text, copyleft, network-use, source-disclosure, termination, cure, patent-grant]
+source_quality: primary
+source_url: https://www.gnu.org/licenses/agpl-3.0.html
+original_language: English
+translation_status: not-needed
 last_verified: 2026-08-25
 related_matter_ids:
   - PR-0001
+  - PR-0002
 ---
 
 # AUTH-0007: GNU Affero General Public License version 3
@@ -24,6 +34,8 @@ of those terms.
 
 ## What it supports
 
+- AGPL-3.0 is an OSI-approved open-source license; the OSI record and the FSF
+  text should be consulted separately for status and operative terms.
 - Section 13 requires a modified program used for remote network interaction to
   offer users an opportunity to receive corresponding source through a stated
   network mechanism.
@@ -49,6 +61,7 @@ reinstatement and any claim concerning past conduct.
 
 ## Treatment in this repository
 
-- Related matters: [PR-0001](../../matters/remedies/agpl-noncompliance-judicial-remedies.md)
+- Related matters: [PR-0001](../../matters/remedies/agpl-noncompliance-judicial-remedies.md),
+  [PR-0002](../../matters/license-comparison/copyleft-source-availability-license-landscape.md)
 - Recheck trigger: a new AGPL version, official erratum, or controlling judicial
   interpretation.

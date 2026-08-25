@@ -5,6 +5,15 @@ authority_type: case
 jurisdiction: US-Northern-District-of-California
 date: 2017-04-25
 authority_status: settled
+court: United States District Court for the Northern District of California
+procedural_posture: motion-to-dismiss
+precedential_weight: persuasive-trial
+licenses: [GNU GPL (version not established)]
+topics: [dual-licensing, contract, copyright-infringement, damages]
+source_quality: primary
+source_url: https://www.govinfo.gov/content/pkg/USCOURTS-cand-3_16-cv-06982/pdf/USCOURTS-cand-3_16-cv-06982-2.pdf
+original_language: English
+translation_status: not-needed
 last_verified: 2026-08-25
 related_matter_ids:
   - PR-0001

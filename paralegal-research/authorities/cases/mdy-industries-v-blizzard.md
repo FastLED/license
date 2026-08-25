@@ -5,6 +5,15 @@ authority_type: case
 jurisdiction: US-Ninth-Circuit
 date: 2010-12-14
 authority_status: current
+court: United States Court of Appeals for the Ninth Circuit
+procedural_posture: appellate-merits
+precedential_weight: binding
+licenses: [World of Warcraft End User License Agreement and Terms of Use]
+topics: [license-condition, contract-covenant, copyright-nexus, infringement]
+source_quality: primary
+source_url: https://cdn.ca9.uscourts.gov/datastore/opinions/2011/02/17/09-15932.pdf
+original_language: English
+translation_status: not-needed
 last_verified: 2026-08-25
 related_matter_ids:
   - PR-0001

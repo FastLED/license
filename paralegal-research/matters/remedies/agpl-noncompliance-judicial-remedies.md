@@ -8,15 +8,30 @@ legal_review: pending
 jurisdictions:
   - US-federal
   - California
+licenses:
+  - GNU Affero General Public License version 3
+actors:
+  - copyright-owner
+  - exclusive-licensee
+  - service-operator
+  - distributor
+  - recipient
+conduct:
+  - distribute
+  - provide-network-access
+  - withhold-source
+  - continue-after-termination
 topics:
   - AGPL
   - remedies
   - injunction
   - source-disclosure
   - commercial-license
+confidence: medium
 last_verified: 2026-08-25
 github_issues:
   - https://github.com/FastLED/license/issues/15
+  - https://github.com/FastLED/license/issues/17
 related_matter_ids: []
 supersedes: []
 ---

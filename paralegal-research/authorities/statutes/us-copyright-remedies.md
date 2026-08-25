@@ -3,8 +3,17 @@ id: AUTH-0006
 title: U.S. Copyright Act remedies and registration timing
 authority_type: statute
 jurisdiction: US-federal
+court: United States Congress
 date: 1976-10-19
 authority_status: current
+procedural_posture: not-applicable
+precedential_weight: not-applicable
+licenses: []
+topics: [copyright-remedies, injunction, impoundment, damages, profits, fees, registration]
+source_quality: primary
+source_url: https://www.govinfo.gov/app/collection/uscode/2024/title17
+original_language: English
+translation_status: not-needed
 last_verified: 2026-08-25
 related_matter_ids:
   - PR-0001
@@ -14,6 +23,7 @@ related_matter_ids:
 
 ## Citation and source
 
+- [Official 2024 edition of Title 17, United States Code](https://www.govinfo.gov/app/collection/uscode/2024/title17)
 - [17 U.S.C. §502 — injunctions](https://www.law.cornell.edu/uscode/text/17/502)
 - [17 U.S.C. §503 — impoundment and disposition](https://www.law.cornell.edu/uscode/text/17/503)
 - [17 U.S.C. §504 — damages and profits](https://www.law.cornell.edu/uscode/text/17/504)

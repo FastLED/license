@@ -5,6 +5,15 @@ authority_type: case
 jurisdiction: California-state-court
 date: 2021-10-19
 authority_status: pending
+court: Superior Court of California, County of Orange
+procedural_posture: complaint
+precedential_weight: none-allegation
+licenses: [GNU GPL (version not established)]
+topics: [third-party-beneficiary, specific-performance, source-disclosure, contract]
+source_quality: secondary
+source_url: https://sfconservancy.org/copyleft-compliance/vizio.html
+original_language: English
+translation_status: not-needed
 last_verified: 2026-08-25
 related_matter_ids:
   - PR-0001
