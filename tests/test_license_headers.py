@@ -9,7 +9,12 @@ import pytest
 from tools import license_headers as subject
 
 
-def write_policy(root: Path, *, old_ids: tuple[str, ...] = ()) -> subject.Policy:
+def write_policy(
+    root: Path,
+    *,
+    old_ids: tuple[str, ...] = (),
+    license_id: str = "LicenseRef-FastLED-Reciprocal-1.0-rc1",
+) -> subject.Policy:
     policy_path = root / "header-policy.toml"
     policy_path.write_text(
         "\n".join(
@@ -17,7 +22,7 @@ def write_policy(root: Path, *, old_ids: tuple[str, ...] = ()) -> subject.Policy
                 "schema_version = 1",
                 f"old_license_ids = [{', '.join(repr(value) for value in old_ids)}]",
                 "[license]",
-                'id = "LicenseRef-FastLED-Reciprocal-1.0"',
+                f'id = "{license_id}"',
                 "header_version = 1",
                 'ai_document = "LICENSE-AI-AGENT-INSTRUCTIONS.md"',
                 "[profiles.release]",
@@ -64,7 +69,7 @@ def test_bom_shebang_encoding_and_mode_are_preserved(tmp_path: Path) -> None:
     assert subject.update_file(subject.classify(source, policy), policy)
     updated = source.read_bytes()
     assert updated.startswith(subject.UTF8_BOM + b"#!/usr/bin/env python3\n# coding: utf-8\n")
-    assert b"# SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0" in updated
+    assert b"# SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0-rc1" in updated
     if os.name != "nt":
         assert stat.S_IMODE(source.stat().st_mode) == 0o744
 
@@ -87,6 +92,53 @@ def test_known_old_header_is_upgraded_without_touching_body(tmp_path: Path) -> N
     assert subject.update_file(finding, policy)
     assert source.read_text(encoding="utf-8").endswith("\n#pragma once\n")
     assert subject.classify(source, policy).state is subject.State.CURRENT
+
+
+def test_legacy_four_line_header_upgrades_to_current_form(tmp_path: Path) -> None:
+    legacy_id = "LicenseRef-FastLED-Reciprocal-1.0"
+    policy = write_policy(tmp_path, old_ids=(legacy_id,))
+    source = tmp_path / "src" / "legacy.h"
+    source.write_text(
+        f"// SPDX-License-Identifier: {legacy_id}\n"
+        "// AI LICENSE: LICENSE-AI-AGENT-INSTRUCTIONS.md\n"
+        "// AI agents must read that file before substantial FastLED changes.\n"
+        "// Substantial AI changes must be reported upstream with a reproducible patch.\n"
+        "\n#pragma once\n",
+        encoding="utf-8",
+    )
+
+    finding = subject.classify(source, policy)
+    assert finding.state is subject.State.OUTDATED
+    assert subject.update_file(finding, policy)
+    text = source.read_text(encoding="utf-8")
+    assert "AI agents must read" not in text
+    assert "AI-Policy: LICENSE-AI-AGENT-INSTRUCTIONS.md" in text
+    assert text.endswith("\n#pragma once\n")
+    assert subject.classify(source, policy).state is subject.State.CURRENT
+
+
+def test_review_gate_allows_rc_identifier(tmp_path: Path) -> None:
+    policy = write_policy(tmp_path)
+    assert subject.review_gate(policy) is None
+
+
+def test_review_gate_fails_closed_without_review_record(tmp_path: Path) -> None:
+    policy = write_policy(tmp_path, license_id="LicenseRef-FastLED-Reciprocal-1.0")
+    error = subject.review_gate(policy)
+    assert error is not None and "no LEGAL-REVIEW.md" in error
+
+
+def test_review_gate_blocks_pending_and_allows_approved(tmp_path: Path) -> None:
+    policy = write_policy(tmp_path, license_id="LicenseRef-FastLED-Reciprocal-1.0")
+    review = tmp_path / "LEGAL-REVIEW.md"
+    review.write_text("# Legal review record\n\nStatus: **PENDING**\n", encoding="utf-8")
+    error = subject.review_gate(policy)
+    assert error is not None and "does not record Status: APPROVED" in error
+    review.write_text(
+        "# Legal review record\n\nStatus: **APPROVED**\nReviewer: A. Lawyer\n",
+        encoding="utf-8",
+    )
+    assert subject.review_gate(policy) is None
 
 
 def test_conflicting_spdx_fails_closed(tmp_path: Path) -> None:

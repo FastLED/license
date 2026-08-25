@@ -1,0 +1,34 @@
+# Machine-readable summary of LICENSE-AI-AGENT-INSTRUCTIONS.md.
+# Informational only; not part of the FastLED Reciprocal License and not a
+# condition of any license grant (see LICENSE Section 11.7).
+
+schema_version = 1
+
+[policy]
+document = "LICENSE-AI-AGENT-INSTRUCTIONS.md"
+binding = false
+authorization_required = true
+
+[upstream_report]
+# Where authorized reports of substantial FastLED modifications are requested.
+repository = "https://github.com/FastLED/FastLED"
+mechanisms = ["public-fork-and-pull-request", "public-issue-with-patch"]
+patch_format = "git-diff-base-sha"
+required_fields = [
+  "base_commit",
+  "unified_diff",
+  "description",
+  "target_platform",
+]
+optional_fields = ["reproduction", "tests"]
+
+[scope]
+applies_to = "modifications-of-fastled-or-derived-source"
+excluded = [
+  "independent-application-code",
+  "formatting-only-changes",
+  "comment-only-changes",
+  "documentation-changes",
+  "dependency-version-bumps-without-behavior-change",
+  "project-local-build-or-ci-configuration",
+]
