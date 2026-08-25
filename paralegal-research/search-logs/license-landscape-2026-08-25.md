@@ -35,7 +35,7 @@
 | File/copyleft | [MPL-2.0](https://www.mozilla.org/en-US/MPL/2.0/), [EPL-2.0](https://www.eclipse.org/legal/epl-2.0/), [CDDL-1.0](https://docs.oracle.com/en/servers/x86/x9-2/license-manual/common-development-and-distribution-license-cddl.html), [EUPL-1.2](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12) | Boundary, notice/source, termination, patents, forum |
 | Network/copyleft | [OSL-3.0](https://opensource.org/license/OSL-3.0), [RPL-1.5](https://opensource.org/license/RPL-1.5), [SSPL-1.0](https://www.mongodb.com/legal/licensing/server-side-public-license) | Deployment/service trigger and conditions |
 | Source-available | [BUSL-1.1](https://mariadb.com/bsl11/), [ELv2](https://www.elastic.co/licensing/elastic-license/faq), [Commons Clause](https://commonsclause.com/), [PolyForm Shield](https://polyformproject.org/licenses/shield/1.0.0), [FSL](https://fsl.software/) | Restriction, conversion, and publisher status |
-| FastLED | [local operative rc1](../../LICENSE), [public repository copy](https://github.com/FastLED/license/blob/main/LICENSE) | Draft comparison only; no adoption conclusion |
+| FastLED | [immutable rc1 snapshot](https://github.com/FastLED/license/blob/40ee7108f4b46b6b8fb1976f5c8b3cd996bdfb42/LICENSE), [AUTH-0025](../authorities/licenses/fastled-reciprocal-license-v1-rc1.md) | Historical draft comparison only; no adoption conclusion |
 
 ## Web queries and results
 

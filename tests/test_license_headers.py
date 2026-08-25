@@ -8,12 +8,15 @@ import pytest
 
 from tools import license_headers as subject
 
+AI_NOTICE_FIXTURE = b"# AI Coding Agent Notice\n"
+
 
 def write_policy(
     root: Path,
     *,
     old_ids: tuple[str, ...] = (),
-    license_id: str = "LicenseRef-FastLED-Reciprocal-1.0-rc1",
+    license_id: str = "LicenseRef-FastLED-Reciprocal-1.0-rc2",
+    ai_document: str = "LICENSE-AI-AGENT-INSTRUCTIONS.md",
 ) -> subject.Policy:
     policy_path = root / "header-policy.toml"
     policy_path.write_text(
@@ -24,7 +27,8 @@ def write_policy(
                 "[license]",
                 f'id = "{license_id}"',
                 "header_version = 1",
-                'ai_document = "LICENSE-AI-AGENT-INSTRUCTIONS.md"',
+                f'ai_document = "{ai_document}"',
+                f'ai_document_sha256 = "{hashlib.sha256(AI_NOTICE_FIXTURE).hexdigest()}"',
                 "[profiles.release]",
                 'roots = ["src"]',
                 'extensions = ["h", "hpp", "cpp", "py"]',
@@ -69,7 +73,7 @@ def test_bom_shebang_encoding_and_mode_are_preserved(tmp_path: Path) -> None:
     assert subject.update_file(subject.classify(source, policy), policy)
     updated = source.read_bytes()
     assert updated.startswith(subject.UTF8_BOM + b"#!/usr/bin/env python3\n# coding: utf-8\n")
-    assert b"# SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0-rc1" in updated
+    assert b"# SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0-rc2" in updated
     if os.name != "nt":
         assert stat.S_IMODE(source.stat().st_mode) == 0o744
 
@@ -112,7 +116,7 @@ def test_legacy_four_line_header_upgrades_to_current_form(tmp_path: Path) -> Non
     assert subject.update_file(finding, policy)
     text = source.read_text(encoding="utf-8")
     assert "AI agents must read" not in text
-    assert "AI-Policy: LICENSE-AI-AGENT-INSTRUCTIONS.md" in text
+    assert "AI-Notice: LICENSE-AI-AGENT-INSTRUCTIONS.md" in text
     assert text.endswith("\n#pragma once\n")
     assert subject.classify(source, policy).state is subject.State.CURRENT
 
@@ -120,6 +124,27 @@ def test_legacy_four_line_header_upgrades_to_current_form(tmp_path: Path) -> Non
 def test_review_gate_allows_rc_identifier(tmp_path: Path) -> None:
     policy = write_policy(tmp_path)
     assert subject.review_gate(policy) is None
+
+
+def test_required_agent_notice_gate(tmp_path: Path) -> None:
+    policy = write_policy(tmp_path)
+    assert subject.required_notice_error(policy) == (
+        "required AI Coding Agent Notice is missing: LICENSE-AI-AGENT-INSTRUCTIONS.md"
+    )
+    (tmp_path / policy.ai_document).write_bytes(AI_NOTICE_FIXTURE)
+    assert subject.required_notice_error(policy) is None
+    (tmp_path / policy.ai_document).write_text("# truncated\n", encoding="utf-8")
+    error = subject.required_notice_error(policy)
+    assert error is not None
+    assert "does not match the canonical digest" in error
+
+
+def test_required_agent_notice_gate_uses_configured_path(tmp_path: Path) -> None:
+    policy = write_policy(tmp_path, ai_document="docs/AI-NOTICE.md")
+    notice = tmp_path / policy.ai_document
+    notice.parent.mkdir()
+    notice.write_bytes(AI_NOTICE_FIXTURE)
+    assert subject.required_notice_error(policy) is None
 
 
 def test_review_gate_fails_closed_without_review_record(tmp_path: Path) -> None:
@@ -254,6 +279,26 @@ def test_artifact_manifest_matches_files() -> None:
     for line in (root / "ARTIFACTS.sha256").read_text(encoding="utf-8").splitlines():
         expected, relative = line.split("  ", 1)
         assert hashlib.sha256((root / relative).read_bytes()).hexdigest() == expected
+
+
+def test_rc2_identifiers_and_agent_notice_are_consistent() -> None:
+    root = Path(__file__).parents[1]
+    license_text = (root / "LICENSE").read_text(encoding="utf-8")
+    license_id = "LicenseRef-FastLED-Reciprocal-1.0-rc2"
+    assert "FastLED Reciprocal License, Version 1.0-rc2" in license_text
+    assert license_id in license_text
+    assert 'defined by the FastLED Reciprocal License, v. 1.0-rc2.' in license_text
+    for name in ("NOTICE-TEMPLATE.txt", "NOTICE-TEMPLATE-MIT-LEGACY.txt"):
+        assert license_id in (root / name).read_text(encoding="utf-8")
+
+    policy = subject.load_policy(root / "header-policy.toml", "release")
+    assert policy.license_id == license_id
+    notice = (root / policy.ai_document).read_bytes()
+    assert hashlib.sha256(notice).hexdigest() == policy.ai_document_sha256
+
+    marker = "Exhibit C - AI Coding Agent Notice\n----------------------------------\n\n"
+    assert marker in license_text
+    assert license_text.split(marker, 1)[1] == notice.decode("utf-8")
 
 
 def test_zccache_fingerprint_success_failure_and_invalidation() -> None:

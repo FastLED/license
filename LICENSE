@@ -28,22 +28,31 @@ __/\\\__________________________________________________________________________
         _\///////////////__\///_____\////////____\//////////__\///____\///__\//////////____\//////////________________\///__\///_____\///////_____                                                                                                                 
 ```
 
-FastLED Reciprocal License, Version 1.0-rc1
+FastLED Reciprocal License, Version 1.0-rc2
 ===========================================
 
 This License is a modified version of the Mozilla Public License, Version
 2.0, created under the permission stated in Section 10.3 of that license. It
 has been renamed, differs from the Mozilla Public License, and is a single,
 self-contained instrument: Sections 1 through 10 are the adapted base terms,
-Section 11 contains the FastLED Additional Terms, and the Exhibits contain
+Section 11 contains the Reciprocal Terms, and the Exhibits contain
 the required notices. The Mozilla Foundation is not the steward of this
 License, has not reviewed it, and does not endorse it.
 
+Exhibit C is a generic AI Coding Agent Notice and is part of this License.
+Every adopting project must include a copy as described in Section 11.7.
+
+This License is reusable license text. A person with sufficient rights may
+apply it to any software by attaching the notice in Exhibit A. Publishing,
+maintaining, or copying this License does not itself make anyone a copyright
+owner, licensor, commercial licensor, or enforcement claimant for software
+that an adopting project places under it.
+
 The SPDX license identifier for this version is:
 
-  LicenseRef-FastLED-Reciprocal-1.0-rc1
+  LicenseRef-FastLED-Reciprocal-1.0-rc2
 
-The "-rc1" suffix marks this text as a release candidate. The identifier
+The "-rc2" suffix marks this text as a release candidate. The identifier
 without an "-rc" suffix is reserved for the reviewed and adopted text; see
 LEGAL-REVIEW.md in the license repository.
 
@@ -54,26 +63,30 @@ This guide is not part of the legal terms and does not replace them. If this
 guide differs from Sections 1 through 11 or the Exhibits, the numbered terms
 and Exhibits control.
 
-* If your use is non-commercial, FastLED charges no license fee: it is "free
-  as in beer." Distribution requirements in this License still apply if You
-  give copies to others.
+* This License charges no fee for either commercial or non-commercial use.
+  Distribution requirements still apply when You give copies to others.
 
-* If your use is commercial, You may use FastLED under this License if:
+* If your use is commercial, You may use Covered Software under this License
+  if:
 
   * You make no Modifications. The special publication condition in Section
-    11.3 does not apply to unmodified FastLED, although the ordinary source
+    11.3 does not apply to unmodified Covered Software, although the ordinary source
     and notice requirements in Section 3 still apply when You distribute it;
     or
 
   * You make Modifications and, on or before the first Triggering Transfer of
-    each modified version, publish the complete Modified FastLED source in a
+    each modified version, publish the complete Modified Covered Software in a
     public repository or publish a complete reproducible patch as a public
     bug report, as detailed in Section 11.3.
 
-When in doubt:
+* A separate commercial license, waiver, or settlement can come only from the
+  applicable software rights holders or their authorized representative. The
+  repository that publishes this License text does not supply that authority.
 
-* Fork the Official FastLED Repository.
-* Make Your FastLED changes in that public fork.
+When an adopting project identifies an Upstream Repository:
+
+* Fork that Upstream Repository.
+* Make Your Covered Software changes in that public fork.
 
 1. Definitions
 --------------
@@ -223,9 +236,9 @@ equivalents.
 2.7. Conditions
 
 Sections 3.1, 3.2, 3.3, and 3.4 are conditions of the licenses granted
-in Section 2.1. Section 11.3 is a condition of, and a limitation on the
-scope of, the license granted in Section 2.1(a) only; Section 11.3 is
-not a condition of the patent license granted in Section 2.1(b).
+in Section 2.1. Sections 11.3 and 11.7(a) are conditions of, and limitations
+on the scope of, the license granted in Section 2.1(a) only; neither is a
+condition of the patent license granted in Section 2.1(b).
 
 3. Responsibilities
 -------------------
@@ -271,9 +284,10 @@ You may not remove or alter the substance of any license notices
 (including copyright notices, patent notices, disclaimers of warranty,
 or limitations of liability) contained within the Source Code Form of
 the Covered Software, except that You may alter any license notices to
-the extent required to remedy known factual inaccuracies. Informational
-lines referencing AI coding agent guidance are not license notices; see
-Section 11.7.
+the extent required to remedy known factual inaccuracies. A source-file line
+pointing to the AI Coding Agent Notice may be relocated or removed if the
+complete notice required by Section 11.7(a) remains included with the Covered
+Software.
 
 3.5. Application of Additional Terms
 
@@ -287,7 +301,7 @@ liability incurred by such Contributor as a result of warranty, support,
 indemnity or liability terms You offer. You may include additional
 disclaimers of warranty and limitations of liability specific to any
 jurisdiction. This Section 3.5 does not authorize the imposition of
-additional license terms on any recipient; the FastLED Additional Terms
+additional license terms on any recipient; the Reciprocal Terms
 in Section 11 are part of this License itself, not terms offered under
 this Section.
 
@@ -393,10 +407,11 @@ cross-claims or counter-claims.
 9. Miscellaneous
 ----------------
 
-This License, including the FastLED Additional Terms in Section 11,
+This License, including the Reciprocal Terms and Exhibits A through C,
 represents the complete agreement concerning the subject matter hereof.
-The AI coding agent guidance referenced in Section 11.7 is informational
-only and is not part of this agreement. If any provision of this
+Exhibit C is part of this agreement. Its required-inclusion rule is stated in
+Section 11.7(a); its instructions to automated agents do not create an
+additional grant condition beyond that Section. If any provision of this
 License is held to be unenforceable, such provision shall be reformed
 only to the extent necessary to make it enforceable. Any law or
 regulation which provides that the language of a contract shall be
@@ -406,27 +421,32 @@ License against a Contributor.
 10. Versions of the License
 ---------------------------
 
-10.1. New Versions
+10.1. Canonical Versions
 
-FastLED is the license steward. Except as provided in Section 10.3, no
-one other than the license steward has the right to modify or publish
-new versions of this License. Each version will be given a
-distinguishing version number.
+Canonical versions of this License are published in the license-text
+repository at https://github.com/FastLED/license. Each version will be
+given a distinguishing version number. The maintainers of that repository
+perform a text-publication and versioning role only. That role does not, by
+itself, make any maintainer a Contributor, copyright owner, licensor,
+commercial licensor, beneficiary, or enforcement claimant for Covered
+Software. An adopting project need not identify an owner of this License
+text.
 
 10.2. Effect of New Versions
 
 You may distribute the Covered Software under the terms of the version
 of the License under which You originally received the Covered Software,
-or under the terms of any subsequent version published by the license
-steward.
+or under the terms of any subsequent canonical version published in the
+license-text repository identified in Section 10.1.
 
 10.3. Modified Versions
 
 If you create software not governed by this License, and you want to
 create a new license for such software, you may create and use a
 modified version of this License if you rename the license and remove
-any references to the name of the license steward (except to note that
-such modified license differs from this License).
+references that could imply that the modified text is a canonical FastLED
+Reciprocal License or is published by the repository identified in Section
+10.1 (except to note that the modified license differs from this License).
 
 10.4. Distributing Source Code Form that is Incompatible With Secondary
 Licenses
@@ -435,42 +455,34 @@ If You choose to distribute Source Code Form that is Incompatible With
 Secondary Licenses under the terms of this version of the License, the
 notice described in Exhibit B of this License must be attached.
 
-11. FastLED Additional Terms
-----------------------------
+11. Reciprocal Terms
+--------------------
 
 11.1. Additional Definitions
 
 Capitalized terms used in this Section 11 and not defined here have the
 meanings given in Section 1.
 
-"Official FastLED Repository" means the Git repository located at
-https://github.com/FastLED/FastLED as of the publication date of this
-License, or such successor location as the license steward designates by
-a notice published in the repository most recently designated as
-official under this definition (for example, a git tag or a top-level
-file identifying the new location). If more than one repository claims
-to be the Official FastLED Repository following a fork or governance
-dispute, the Official FastLED Repository is the one whose commit history
-is a continuous, ancestor-inclusive descendant of the commit history of
-the repository identified above and that is maintained by or with the
-authorization of the license steward.
+"Upstream Repository" means a public version-control repository, if any,
+that the initial Contributor identifies in or with the Exhibit A notice as
+the upstream repository for the Covered Software. An adopting project may
+identify a successor location in that repository. This definition does not
+give the repository maintainers any ownership, licensing, or enforcement
+authority they do not otherwise possess.
 
-"FastLED" means Covered Software originating in the Official FastLED
-Repository.
-
-"Modified FastLED" means FastLED containing Modifications as defined in
-Section 1.10. It does not include separate files of a Larger Work that
-do not contain or derive from Covered Software. Each distinct version or
-state of Modified FastLED is a separate body of Modified FastLED for the
-purposes of Section 11.3; publication of one version does not satisfy
-Section 11.3 for any other version.
+"Modified Covered Software" means Covered Software containing
+Modifications as defined in Section 1.10. It does not include separate
+files of a Larger Work that do not contain or derive from Covered Software.
+Each distinct version or state is a separate body of Modified Covered
+Software for the purposes of Section 11.3; publication of one version does
+not satisfy Section 11.3 for another version.
 
 "Triggering Transfer" means any transfer to a third party, for monetary
-or other valuable consideration, of a version of Modified FastLED, or of
-software, firmware, or hardware embodying that version, where the
+or other valuable consideration, of a version of Modified Covered Software,
+or of software, firmware, or hardware embodying that version, where the
 transfer is made by, or with the authorization of, the person that
 created or commissioned the Modifications in that version. A Triggering
-Transfer also occurs when a version of Modified FastLED is made
+Transfer also occurs when a version of Modified Covered Software is made
 available at no charge in connection with a product, device, or service
 for which the person that created or commissioned the Modifications, or
 its licensee, receives monetary or other valuable consideration. The
@@ -484,7 +496,7 @@ following are not Triggering Transfers:
     Modifications;
 
 (c) a lease or rental of a device that does not convey a copy of the
-    Modified FastLED Source Code Form or Executable Form to the lessee
+    Modified Covered Software Source Code Form or Executable Form to the lessee
     beyond the copy embedded in the device, where the lessor retains
     ownership of the device; and
 
@@ -493,7 +505,7 @@ following are not Triggering Transfers:
     commissioned the Modifications; such a person incurs no obligation
     under Section 11.3 by reason of that transfer alone.
 
-Use of Modified FastLED to provide a service over a network, without a
+Use of Modified Covered Software to provide a service over a network, without a
 transfer of a copy, is not a Triggering Transfer; Sections 3.1 and 3.2
 continue to apply to any distribution that does occur.
 
@@ -505,8 +517,8 @@ supports forking.
 
 11.2. Proprietary Larger Works
 
-For clarity, independent application code, sketches, firmware logic,
-products, plugins, and other works that merely call FastLED APIs are
+For clarity, independent application code, scripts, firmware logic,
+products, plugins, and other works that merely call Covered Software APIs are
 separate files of a Larger Work. They do not become Covered Software
 solely through use, compilation, static or dynamic linking, embedding,
 distribution, deployment, or sale. Such Larger Work material may remain
@@ -520,7 +532,7 @@ Software under Section 1.4.
 11.3. Public Availability Condition
 
 (a) Condition. You may reproduce and distribute a version of Modified
-    FastLED only if, on or before the date of the earliest Triggering
+    Covered Software only if, on or before the date of the earliest Triggering
     Transfer of that version (measured in the time zone of Your
     principal place of business), the complete Source Code Form of that
     version is Publicly Available through at least one of the mechanisms
@@ -530,10 +542,10 @@ Software under Section 1.4.
     period after a Triggering Transfer, and Section 11.3(f) governs the
     consequences of a Triggering Transfer that precedes publication.
 
-(b) Standing compliance. If You develop Modified FastLED in a
+(b) Standing compliance. If You develop Modified Covered Software in a
     repository that is Publicly Available at all times from the start of
     development through the date of a Triggering Transfer, and that
-    repository identifies the upstream FastLED commit or release from
+    repository identifies the exact upstream source, commit, or release from
     which the work is derived, You satisfy this Section for every
     version contained in that repository as of that date, with nothing
     further required.
@@ -542,21 +554,20 @@ Software under Section 1.4.
 
     (i)  Public repository. Publishing the complete Source Code Form of
          the version in a Publicly Available Git repository that
-         identifies the upstream FastLED commit or release from which it
-         was derived. A public fork of the Official FastLED Repository
-         is the preferred location; any equivalent Publicly Available
-         Git repository is sufficient.
+         identifies the exact upstream source, commit, or release from which
+         it was derived. A public fork of the Upstream Repository, if one is
+         identified, is a preferred location; any equivalent Publicly
+         Available Git repository is sufficient.
 
     (ii) Public patch. Publishing a report that identifies the exact
-         upstream commit identifier used as the base and contains a
-         complete unified diff against that commit (equivalent to
-         `git diff <upstream-commit>...HEAD`), together with a short
-         description of the modification. The base commit and diff must
-         be sufficient to reconstruct the complete Source Code Form of
-         the version deterministically. The preferred location is a
-         public issue in the Official FastLED Repository or in a
-         reporting location the license steward designates; a Publicly
-         Available location under Your control is equally sufficient.
+         upstream source version or commit identifier used as the base and
+         contains a complete patch or unified diff against that base,
+         together with a short description of the modification. The base and
+         patch must be sufficient to reconstruct the complete Source Code
+         Form of the version deterministically. A public issue in the
+         Upstream Repository or another reporting location identified with
+         the Covered Software is a preferred location; a Publicly Available
+         location under Your control is equally sufficient.
 
 (d) Duration. Source Code Form published under this Section must remain
     Publicly Available for at least three (3) years after the last
@@ -564,15 +575,15 @@ Software under Section 1.4.
     You distribute the Executable Form of that version.
 
 (e) Third-party interference. If a submission made under Section
-    11.3(c)(ii) to the Official FastLED Repository is rejected, blocked,
-    removed, or rendered inaccessible by a person other than You, or if
-    the Official FastLED Repository or its hosting platform is
+    11.3(c)(ii) to the Upstream Repository or another project-designated
+    location is rejected, blocked, removed, or rendered inaccessible by a
+    person other than You, or if that location or its hosting platform is
     unavailable to You for reasons outside Your control, You remain
     compliant if You republish the same material in a Publicly Available
     location under Your control within thirty (30) days of becoming
-    aware of the interference or unavailability. No act or omission of
-    the license steward or the maintainers of the Official FastLED
-    Repository places You in breach of this Section by itself.
+    aware of the interference or unavailability. No act or omission of the
+    license-text repository, an Upstream Repository, or their maintainers
+    places You in breach of this Section by itself.
 
 (f) Timing and consequences. Section 5.1 applies to any failure to
     satisfy this Section. Publication after the date of a Triggering
@@ -583,40 +594,41 @@ Software under Section 1.4.
     later publication does not change that. Publication does restore
     Your rights prospectively, subject to Section 5.1.
 
-(g) Separate license. This Section does not apply to a version of
-    Modified FastLED for which You have obtained a separate written
-    license from the license steward expressly excusing compliance with
-    this Section.
+(g) Separate license. This Section does not apply to acts separately
+    authorized by a written license from every Contributor whose permission
+    is necessary for those acts, or from a person authorized to license those
+    Contributions. Publishing or maintaining this License text supplies no
+    such authority.
 
 (h) Relationship to Sections 3.1 and 3.2. This Section is in addition
     to, and does not replace, Your obligations under Sections 3.1 and
     3.2. Publication under Section 11.3(c)(i) satisfies Section 3.2(a)
-    with respect to the Modified FastLED if You inform recipients of the
+    with respect to the Modified Covered Software if You inform recipients of the
     Executable Form of the location of the published Source Code Form.
     Publication under Section 11.3(c)(ii) does not by itself satisfy
     Section 3.2(a).
 
-11.4. No Relicensing of Historical Releases
+11.4. No Relicensing of Earlier Releases
 
-These terms apply only where a copyright holder validly offers Covered
-Software under this License. They do not withdraw, terminate, or alter
-rights previously granted under the MIT License or any other license to
-versions of FastLED released from the Official FastLED Repository before
-this License was adopted. Those historical releases remain available
-under their original terms.
+These terms apply only where a person with sufficient rights validly offers
+Covered Software under this License. They do not withdraw, terminate, or
+alter rights previously granted under another license to earlier versions of
+the same software. Those releases remain available under their original
+terms.
 
 11.5. Trademarks
 
 This License does not grant permission to use the trade names,
-trademarks, service marks, product names, or logos of FastLED, the
-license steward, or any Contributor, except (a) as required to
+trademarks, service marks, product names, or logos of any Contributor,
+project, or repository, except (a) as required to
 reproduce the notices described in Section 3.4 and Exhibit A, and (b)
 for the truthful, non-misleading, nominative use necessary to state
-that a work is derived from or compatible with FastLED, to identify the
-upstream FastLED commit or release from which a publication under
-Section 11.3 is derived, or to name a fork in the manner customary on
-the hosting platform. The naming preference in Section 11.3(c)(i) does
-not itself grant, imply, or estop the assertion of trademark rights.
+that a work is derived from or compatible with Covered Software, to identify
+the upstream source, commit, or release from which a publication under
+Section 11.3 is derived, or to name a fork in the manner customary on the
+hosting platform. The License name may be used accurately to identify these
+terms. These allowances do not themselves grant, imply, or estop the
+assertion of other trademark rights.
 
 11.6. Secondary Licenses
 
@@ -625,16 +637,30 @@ Software. The Covered Software is Incompatible With Secondary Licenses
 as defined in Section 1.5, and Section 3.3 does not permit distribution
 of the Covered Software under the terms of any Secondary License.
 
-11.7. AI Coding Agent Guidance
+11.7. AI Coding Agent Notice
 
-The license steward may publish guidance describing requested practices
-for AI coding agents and their operators (for example, the file
-`LICENSE-AI-AGENT-INSTRUCTIONS.md`). That guidance is informational
-only. It is not part of this License, is not a condition of any grant
-under Section 2.1, and creates no legal obligation, claim, or remedy.
-Source-file comment lines that reference such guidance are not license
-notices for the purposes of Section 3.4, and removing them does not
-violate this License.
+(a) Required inclusion. The generic AI Coding Agent Notice in Exhibit C is
+part of this License. The initial Contributor must include a complete copy
+    in the project containing the Covered Software, preferably as
+    `LICENSE-AI-AGENT-INSTRUCTIONS.md` at the repository root. You must keep a
+    complete copy with every distribution of Covered Software in Source Code
+    Form and with every source distribution or source-location mechanism used
+    to satisfy Section 3.2 or 11.3. This inclusion requirement is a condition
+    of the copyright license as stated in Section 2.7.
+
+(b) Agent-directed effect. Exhibit C supplies generic operating guidance to
+    automated coding agents and their operators. An automated agent is not
+    treated as a Contributor, contracting party, or enforcement target merely
+    because it reads the notice. The instructions in Exhibit C do not create
+    additional license conditions, damages, or remedies beyond the human or
+    legal entity's duty to include the notice under Section 11.7(a) and the
+    otherwise applicable terms of this License.
+
+(c) Project-specific information. Exhibit C obtains any project-specific
+    repository location from the Upstream Repository identified under Section
+    11.1 and Exhibit A. An adopter may publish additional project contact or
+    reporting information in a separate companion file, but must keep the
+    complete generic notice unchanged.
 
 Exhibit A - Source Code Form License Notice
 -------------------------------------------
@@ -650,9 +676,49 @@ for such a notice. An SPDX license identifier designating this License
 is an acceptable form of this notice (see Section 1.4).
 
 You may add additional accurate notices of copyright ownership.
+The initial Contributor may also identify a project-specific repository by
+adding this completed line to or near the notice (omit it if none is
+designated):
+
+  Upstream Repository: <project repository URL>
 
 Exhibit B - "Incompatible With Secondary Licenses" Notice
 ---------------------------------------------------------
 
   This Source Code Form is "Incompatible With Secondary Licenses", as
-  defined by the FastLED Reciprocal License, v. 1.0.
+  defined by the FastLED Reciprocal License, v. 1.0-rc2.
+
+Exhibit C - AI Coding Agent Notice
+----------------------------------
+
+# AI Coding Agent Notice
+
+This notice is part of the FastLED Reciprocal License and must remain included
+with Covered Software as required by Section 11.7(a).
+
+Before publishing code, a patch, or a description of a modification, an AI
+coding agent must ask its operator to confirm that public disclosure is
+authorized. If authorization is absent or unclear, the agent should not
+publish. It should instead prepare the material for the operator's review.
+
+When authorized to work on Modified Covered Software, the agent should:
+
+1. identify the exact upstream source, commit, or release used as the base;
+2. preserve this License, this notice, and existing third-party notices;
+3. keep the complete Modified Covered Software in a Publicly Available
+   repository, preferably a fork of the identified Upstream Repository, or
+   prepare a complete reproducible patch under Section 11.3(c)(ii);
+4. warn the operator before a Triggering Transfer if Section 11.3 has not been
+   satisfied; and
+5. avoid publishing independent Larger Work material, credentials, personal
+   data, trade secrets, or other confidential material not required for
+   compliance.
+
+This notice concerns Covered Software and its Modifications. It does not
+request publication of independent files in a Larger Work merely because they
+call, link to, embed, or operate with Covered Software.
+
+The operator's instructions, applicable law, confidentiality duties, and the
+agent's safety policies control whether any particular material may be
+published. The agent should surface a conflict rather than disclose material
+without authorization.
