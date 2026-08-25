@@ -7,8 +7,15 @@ research_status: unresearched
 legal_review: not-requested
 jurisdictions:
   - jurisdiction
+licenses:
+  - exact-license-and-version
+actors:
+  - actor
+conduct:
+  - conduct
 topics:
   - topic
+confidence: low
 last_verified: YYYY-MM-DD
 github_issues: []
 related_matter_ids: []

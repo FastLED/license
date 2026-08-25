@@ -5,6 +5,15 @@ authority_type: case
 jurisdiction: US-Federal-Circuit-applying-Ninth-Circuit-law
 date: 2008-08-13
 authority_status: current
+court: United States Court of Appeals for the Federal Circuit
+procedural_posture: appellate-merits
+precedential_weight: binding
+licenses: [Artistic License 1.0]
+topics: [license-condition, attribution, copyright-infringement, preliminary-injunction]
+source_quality: secondary
+source_url: https://www.law.berkeley.edu/files/Jacobsen_v_Katzer_-_Westlaw.pdf
+original_language: English
+translation_status: not-needed
 last_verified: 2026-08-25
 related_matter_ids:
   - PR-0001

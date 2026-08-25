@@ -5,6 +5,15 @@ authority_type: settlement
 jurisdiction: US-Southern-District-of-New-York
 date: 2007-10-30
 authority_status: settled
+court: United States District Court for the Southern District of New York
+procedural_posture: settled
+precedential_weight: none-settlement
+licenses: [GNU GPL v2]
+topics: [distribution, source-disclosure, settlement, cure]
+source_quality: secondary
+source_url: https://softwarefreedom.org/news/2007/oct/30/busybox-monsoon-settlement/
+original_language: English
+translation_status: not-needed
 last_verified: 2026-08-25
 related_matter_ids:
   - PR-0001

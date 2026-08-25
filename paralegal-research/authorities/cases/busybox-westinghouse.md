@@ -5,6 +5,15 @@ authority_type: case
 jurisdiction: US-Southern-District-of-New-York
 date: 2010-07-27
 authority_status: default-judgment
+court: United States District Court for the Southern District of New York
+procedural_posture: default-judgment
+precedential_weight: default-only
+licenses: [GNU GPL v2]
+topics: [distribution, injunction, damages, default-judgment]
+source_quality: secondary
+source_url: https://sfconservancy.org/news/2010/aug/03/busybox-gpl/
+original_language: English
+translation_status: not-needed
 last_verified: 2026-08-25
 related_matter_ids:
   - PR-0001
