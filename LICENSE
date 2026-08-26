@@ -338,7 +338,7 @@ regulation, such description must be sufficiently detailed for a
 recipient of ordinary skill to be able to understand it. A private
 contractual obligation of confidentiality is not a statute, judicial
 order, or regulation for the purposes of this Section; see Section
-11.3(g) for the separate-license alternative.
+11.3(g) for the separate-permission alternative.
 
 5. Termination
 --------------
@@ -347,14 +347,16 @@ order, or regulation for the purposes of this Section; see Section
 fail to comply with any of its terms. For a first, non-willful non-compliance
 with respect to a particular Contributor, Your rights from that Contributor
 are reinstated provisionally when You become compliant. That reinstatement
-becomes ongoing if the Contributor notifies You of the non-compliance by
-reasonable means and You become compliant within thirty (30) days after
-receiving the notice. If You were already compliant when notice arrived, the
-thirty-day requirement is satisfied. After a repeat violation following such
-notice, or after a willful violation, Your rights remain terminated unless the
-affected Contributor expressly reinstates them in writing. Reinstatement is
-prospective only and does not release liability or remedies for acts that
-occurred while Your rights were terminated; see Section 11.3(f).
+becomes ongoing if (a) the Contributor does not notify You of the non-
+compliance by reasonable means within sixty (60) days after You become
+compliant, or (b) the Contributor notifies You and You become compliant within
+thirty (30) days after receiving the notice. If You were already compliant
+when notice arrived, the thirty-day requirement is satisfied. After a repeat
+violation following such notice, or after a willful violation, Your rights
+remain terminated unless the affected Contributor expressly reinstates them
+in writing. Reinstatement is prospective only and does not release liability
+or remedies for acts that occurred while Your rights were terminated; see
+Section 11.3(f).
 
 5.2. If You initiate litigation against any entity by asserting a patent
 infringement claim (excluding declaratory judgment actions,
@@ -650,16 +652,18 @@ Software under Section 1.4.
     only part of the Modifications is merged, the unmerged delta must remain
     Publicly Available through another compliant mechanism.
 
-(e) Third-party interference. If a submission made under Section
-    11.3(c) is rejected, blocked, removed, or rendered inaccessible by a
-    person other than You, or if the official location or its hosting platform
+(e) Third-party interference. If a submission made under Section 11.3(c) is
+    blocked, removed, or rendered inaccessible by a person other than You, is
+    rejected in a manner that prevents the complete material from remaining
+    Publicly Available, or if the official location or its hosting platform
     becomes unavailable for reasons outside Your control, You remain compliant
     if You republish the same complete material at another Publicly Available
     location within thirty (30) days after becoming aware of the interference
-    or unavailability. There is no breach during that outside-control window.
-    No act or omission of the license-text repository, an Upstream Repository,
-    an Official Reporting Location, or their maintainers places You in breach
-    by itself.
+    or unavailability. Rejection or closure does not require republication
+    while the complete material remains Publicly Available. There is no breach
+    during that outside-control window. No act or omission of the license-text
+    repository, an Upstream Repository, an Official Reporting Location, or
+    their maintainers places You in breach by itself.
 
 (f) Timing and consequences. Section 5.1 applies to any failure to
     satisfy this Section. Publication after the date of a Monetization Event

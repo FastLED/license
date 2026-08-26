@@ -296,7 +296,11 @@ def test_rc3_identifiers_and_agent_notice_are_consistent() -> None:
     assert "A restriction in this License that the elected Secondary License" in license_text
     assert "Changing this License document is not permitted under this License" in license_text
     for name in ("NOTICE-TEMPLATE.txt", "NOTICE-TEMPLATE-MIT-LEGACY.txt"):
-        assert license_id in (root / name).read_text(encoding="utf-8")
+        template = (root / name).read_text(encoding="utf-8")
+        assert license_id in template
+        assert "License Version: FastLED Reciprocal License 1.0-rc3 only" in template
+        assert "Upstream Repository: <project repository URL>" in template
+        assert "Official Reporting Location: <public pull-request or issue URL>" in template
 
     policy = subject.load_policy(root / "header-policy.toml", "release")
     assert policy.license_id == license_id
