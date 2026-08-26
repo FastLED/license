@@ -1,2 +1,2 @@
-// SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0-rc2
+// SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0-rc3
 // AI-Notice: LICENSE-AI-AGENT-INSTRUCTIONS.md (required by LICENSE Section 11.7)

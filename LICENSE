@@ -28,7 +28,7 @@ __/\\\__________________________________________________________________________
         _\///////////////__\///_____\////////____\//////////__\///____\///__\//////////____\//////////________________\///__\///_____\///////_____                                                                                                                 
 ```
 
-FastLED Reciprocal License, Version 1.0-rc2
+FastLED Reciprocal License, Version 1.0-rc3
 ===========================================
 
 This License is a modified version of the Mozilla Public License, Version
@@ -45,14 +45,14 @@ Every adopting project must include a copy as described in Section 11.7.
 This License is reusable license text. A person with sufficient rights may
 apply it to any software by attaching the notice in Exhibit A. Publishing,
 maintaining, or copying this License does not itself make anyone a copyright
-owner, licensor, commercial licensor, or enforcement claimant for software
+owner, licensor, separate-permission grantor, or enforcement claimant for software
 that an adopting project places under it.
 
 The SPDX license identifier for this version is:
 
-  LicenseRef-FastLED-Reciprocal-1.0-rc2
+  LicenseRef-FastLED-Reciprocal-1.0-rc3
 
-The "-rc2" suffix marks this text as a release candidate. The identifier
+The "-rc3" suffix marks this text as a release candidate. The identifier
 without an "-rc" suffix is reserved for the reviewed and adopted text; see
 LEGAL-REVIEW.md in the license repository.
 
@@ -66,27 +66,40 @@ and Exhibits control.
 * This License charges no fee for either commercial or non-commercial use.
   Distribution requirements still apply when You give copies to others.
 
-* If your use is commercial, You may use Covered Software under this License
-  if:
+* Unmodified Covered Software may be used commercially. The special public-
+  return condition in Section 11.3 applies only to Modified Covered Software.
 
-  * You make no Modifications. The special publication condition in Section
-    11.3 does not apply to unmodified Covered Software, although the ordinary source
-    and notice requirements in Section 3 still apply when You distribute it;
-    or
+* You may develop and evaluate Modified Covered Software privately before a
+  Monetization Event. On or before the first Monetization Event for each
+  modified version, You must return the complete Compliance Source for the
+  covered portion through the official upstream project as a public pull
+  request, public fork, or complete reproducible patch, as detailed in Section
+  11.3.
 
-  * You make Modifications and, on or before the first Triggering Transfer of
-    each modified version, publish the complete Modified Covered Software in a
-    public repository or publish a complete reproducible patch as a public
-    bug report, as detailed in Section 11.3.
+* Bona fide teaching, learning, scholarship, academic research, software
+  discussion, and media or social-media presentation are exempt as described
+  in Section 11.1. Selling usable Modified Covered Software or a product,
+  service, or deliverable materially enabled by it is not exempt merely
+  because the customer is an educational institution.
 
-* A separate commercial license, waiver, or settlement can come only from the
-  applicable software rights holders or their authorized representative. The
-  repository that publishes this License text does not supply that authority.
+* Unless an adopter attaches Exhibit B, Covered Software may be combined with
+  the named GPL-family Secondary Licenses under Section 3.3. A recipient who
+  elects a Secondary License follows that license where its terms conflict
+  with this License, while preserving applicable license and provenance
+  notices.
 
-When an adopting project identifies an Upstream Repository:
+* Separate written permission can come only from the applicable software
+  rightsholders or their authorized representative. No rightsholder is
+  required to offer it, and the repository that publishes this License text
+  does not supply that authority.
+
+When an adopting project identifies an Upstream Repository and Official
+Reporting Location:
 
 * Fork that Upstream Repository.
 * Make Your Covered Software changes in that public fork.
+* Submit the complete covered delta through the designated public project
+  mechanism no later than the first Monetization Event.
 
 1. Definitions
 --------------
@@ -219,7 +232,8 @@ addressed in Section 11.5.
 
 No Contributor makes additional grants as a result of Your choice to
 distribute the Covered Software under a subsequent version of this
-License (see Section 10.2).
+License, if the initial Contributor has permitted that choice under
+Section 10.2.
 
 2.5. Representation
 
@@ -273,10 +287,14 @@ If You distribute Covered Software in Executable Form then:
 
 You may create and distribute a Larger Work under terms of Your choice,
 provided that You also comply with the requirements of this License for
-the Covered Software. The Covered Software is Incompatible With
-Secondary Licenses (see Sections 1.5 and 11.6), and this License does
-not permit You to distribute the Covered Software under the terms of any
-Secondary License.
+the Covered Software. If the Larger Work is a combination of Covered
+Software with a work governed by one or more Secondary Licenses, and the
+Covered Software is not Incompatible With Secondary Licenses, this License
+permits You to additionally distribute such Covered Software under the terms
+of such Secondary License or Licenses, so that a recipient of the Larger Work
+may, at its option, further distribute the Covered Software under the terms of
+either this License or such Secondary License or Licenses. Section 11.6
+controls conflicts following that election.
 
 3.4. Notices
 
@@ -325,20 +343,18 @@ order, or regulation for the purposes of this Section; see Section
 5. Termination
 --------------
 
-5.1. The rights granted under this License will terminate automatically
-if You fail to comply with any of its terms. However, if You become
-compliant, then the rights granted under this License from a particular
-Contributor are reinstated (a) provisionally, unless and until such
-Contributor explicitly and finally terminates Your grants, and (b) on an
-ongoing basis, if such Contributor fails to notify You of the
-non-compliance by some reasonable means prior to 60 days after You have
-come back into compliance. Moreover, Your grants from a particular
-Contributor are reinstated on an ongoing basis if such Contributor
-notifies You of the non-compliance by some reasonable means, this is the
-first time You have received notice of non-compliance with this License
-from such Contributor, and You become compliant prior to 30 days after
-Your receipt of the notice. Reinstatement under this Section is
-prospective only; see Section 11.3(f).
+5.1. The rights granted under this License will terminate automatically if You
+fail to comply with any of its terms. For a first, non-willful non-compliance
+with respect to a particular Contributor, Your rights from that Contributor
+are reinstated provisionally when You become compliant. That reinstatement
+becomes ongoing if the Contributor notifies You of the non-compliance by
+reasonable means and You become compliant within thirty (30) days after
+receiving the notice. If You were already compliant when notice arrived, the
+thirty-day requirement is satisfied. After a repeat violation following such
+notice, or after a willful violation, Your rights remain terminated unless the
+affected Contributor expressly reinstates them in writing. Reinstatement is
+prospective only and does not release liability or remedies for acts that
+occurred while Your rights were terminated; see Section 11.3(f).
 
 5.2. If You initiate litigation against any entity by asserting a patent
 infringement claim (excluding declaratory judgment actions,
@@ -428,25 +444,32 @@ repository at https://github.com/FastLED/license. Each version will be
 given a distinguishing version number. The maintainers of that repository
 perform a text-publication and versioning role only. That role does not, by
 itself, make any maintainer a Contributor, copyright owner, licensor,
-commercial licensor, beneficiary, or enforcement claimant for Covered
+separate-permission grantor, beneficiary, or enforcement claimant for Covered
 Software. An adopting project need not identify an owner of this License
 text.
 
 10.2. Effect of New Versions
 
-You may distribute the Covered Software under the terms of the version
-of the License under which You originally received the Covered Software,
-or under the terms of any subsequent canonical version published in the
-license-text repository identified in Section 10.1.
+The initial Contributor must state, in or with the Exhibit A notice, whether
+the Covered Software is offered under this version only or under this version
+or any later canonical version. If the statement is omitted, the offer is
+under this version only. If the initial Contributor permits later versions,
+You may distribute the Covered Software under the terms of the version under
+which You originally received it or any subsequent canonical version
+published in the license-text repository identified in Section 10.1. A later
+version does not retroactively alter a grant already made under an earlier
+version.
 
 10.3. Modified Versions
 
-If you create software not governed by this License, and you want to
-create a new license for such software, you may create and use a
-modified version of this License if you rename the license and remove
-references that could imply that the modified text is a canonical FastLED
-Reciprocal License or is published by the repository identified in Section
-10.1 (except to note that the modified license differs from this License).
+Permission is granted to copy and distribute verbatim copies of this License.
+Changing this License document is not permitted under this License. Separately
+authored terms must use a different name and must not state or imply that they
+are a canonical FastLED Reciprocal License or were published by the repository
+identified in Section 10.1. This restriction does not prevent anyone from
+using the unmodified Mozilla Public License under its terms, independently
+drafting another license, or using ideas and other material not protected by
+copyright.
 
 10.4. Distributing Source Code Form that is Incompatible With Secondary
 Licenses
@@ -470,6 +493,13 @@ identify a successor location in that repository. This definition does not
 give the repository maintainers any ownership, licensing, or enforcement
 authority they do not otherwise possess.
 
+"Official Reporting Location" means the public pull-request or issue-reporting
+location, if any, that the initial Contributor identifies in or with the
+Exhibit A notice for submission of Modifications. An adopting project may
+identify a successor location through the Upstream Repository. This definition
+does not give the location or its maintainers any ownership, licensing, or
+enforcement authority they do not otherwise possess.
+
 "Modified Covered Software" means Covered Software containing
 Modifications as defined in Section 1.10. It does not include separate
 files of a Larger Work that do not contain or derive from Covered Software.
@@ -477,37 +507,70 @@ Each distinct version or state is a separate body of Modified Covered
 Software for the purposes of Section 11.3; publication of one version does
 not satisfy Section 11.3 for another version.
 
-"Triggering Transfer" means any transfer to a third party, for monetary
-or other valuable consideration, of a version of Modified Covered Software,
-or of software, firmware, or hardware embodying that version, where the
-transfer is made by, or with the authorization of, the person that
-created or commissioned the Modifications in that version. A Triggering
-Transfer also occurs when a version of Modified Covered Software is made
-available at no charge in connection with a product, device, or service
-for which the person that created or commissioned the Modifications, or
-its licensee, receives monetary or other valuable consideration. The
-following are not Triggering Transfers:
+"Compliance Source" means the complete Source Code Form of Modified Covered
+Software, together with the scripts, configuration templates, build
+instructions, and identities and versions of dependencies reasonably necessary
+to reconstruct and build the covered portion. Compliance Source does not
+include independent files of a Larger Work, credentials, private keys,
+personal data, security secrets, or third-party material that You do not have
+the right to publish. An exclusion does not permit omission or redaction of
+Covered Software. Excluded dependencies must still be accurately identified,
+and confidential or separately licensed material must be separated from
+Covered Software or separately authorized.
 
-(a) a transfer between entities that together constitute "You" under
-    Section 1.14;
+"Materially Enables" means that Modified Covered Software performs a
+substantial and non-incidental role in developing, producing, operating, or
+delivering a product, device, software offering, service, access arrangement,
+or contracted deliverable. It includes a modified tool used to develop or
+produce a later monetized offering even if use of the tool stops before the
+offering is sold. It excludes trivial administrative, background, or merely
+incidental use.
 
-(b) a transfer by a manufacturer or assembler acting on the instruction
-    of, and delivering exclusively to, the person that commissioned the
-    Modifications;
+"Monetization Event" means an event in which You, or a person acting under
+Your authority, receive or become entitled to monetary or other valuable
+consideration from any of the following involving a version of Modified
+Covered Software that You created, commissioned, or control:
 
-(c) a lease or rental of a device that does not convey a copy of the
-    Modified Covered Software Source Code Form or Executable Form to the lessee
-    beyond the copy embedded in the device, where the lessor retains
-    ownership of the device; and
+(a) selling, licensing, leasing, renting, or otherwise transferring that
+    version or a product, device, software offering, or other deliverable
+    embodying that version;
 
-(d) a subsequent sale, resale, or other transfer by a distributor,
-    retailer, reseller, or other person who neither created nor
-    commissioned the Modifications; such a person incurs no obligation
-    under Section 11.3 by reason of that transfer alone.
+(b) providing a paid, sponsored, advertising-supported, customer-facing,
+    hosted, or network service that the version Materially Enables, whether or
+    not a copy is transferred to a customer;
 
-Use of Modified Covered Software to provide a service over a network, without a
-transfer of a copy, is not a Triggering Transfer; Sections 3.1 and 3.2
-continue to apply to any distribution that does occur.
+(c) using the version privately or internally where it Materially Enables the
+    development, production, operation, or delivery of a monetized product,
+    device, service, or deliverable; or
+
+(d) receiving funding tied to a specific product, service, deliverable, or
+    access arrangement that the version Materially Enables.
+
+The amount of consideration does not matter. The following are not
+Monetization Events:
+
+(i)   private, non-monetized development, experimentation, or internal
+      evaluation;
+
+(ii)  bona fide teaching, learning, scholarship, academic research,
+      classroom demonstration, or public discussion, review, or depiction of
+      the software in social media or other media, even when an institution
+      charges tuition, participants receive salaries, or the activity receives
+      general sponsorship or advertising revenue, provided the activity does
+      not sell or provide for consideration usable Modified Covered Software,
+      access to it, or a non-educational commercial product, service, or
+      deliverable that it Materially Enables; and
+
+(iii) unrestricted donations, scholarships, or general grants that are not
+      tied to a specific product, service, deliverable, or access arrangement.
+
+A transfer between entities that together constitute You under Section 1.14,
+or to a contractor acting exclusively on Your behalf, is not by itself a
+Monetization Event, but the later monetized activity it supports may be. A
+downstream resale by a distributor, retailer, or reseller that neither
+created, commissioned, nor controls the Modifications does not create a new
+Section 11.3 obligation by itself; Sections 3.1 and 3.2 continue to govern any
+distribution that occurs.
 
 "Publicly Available" means accessible at a stable URL, without payment,
 login, invitation, allow-listing, approval step, or any other special
@@ -531,82 +594,94 @@ Software under Section 1.4.
 
 11.3. Public Availability Condition
 
-(a) Condition. You may reproduce and distribute a version of Modified
-    Covered Software only if, on or before the date of the earliest Triggering
-    Transfer of that version (measured in the time zone of Your
-    principal place of business), the complete Source Code Form of that
-    version is Publicly Available through at least one of the mechanisms
-    in Section 11.3(c). This condition applies separately to each
-    version. The development period before a Triggering Transfer is the
-    time in which to establish compliance; there is no compliance
-    period after a Triggering Transfer, and Section 11.3(f) governs the
-    consequences of a Triggering Transfer that precedes publication.
+(a) Condition. You may use, reproduce, modify, or distribute a version of
+    Modified Covered Software in connection with a Monetization Event only if,
+    on or before the date of the earliest Monetization Event for that version
+    (measured in the time zone of Your principal place of business), its
+    complete Compliance Source is Publicly Available through a mechanism in
+    Section 11.3(c). This is a condition of the copyright permission granted
+    for those acts, applies separately to each version involved in a
+    Monetization Event, and does not claim an exclusive copyright right over
+    conduct that applicable law permits without a license. The private,
+    non-monetized development period is the time in which to establish
+    compliance. Section 11.3(f) governs a Monetization Event that precedes
+    publication.
 
 (b) Standing compliance. If You develop Modified Covered Software in a
     repository that is Publicly Available at all times from the start of
-    development through the date of a Triggering Transfer, and that
+    development through the date of a Monetization Event, and that
     repository identifies the exact upstream source, commit, or release from
     which the work is derived, You satisfy this Section for every
-    version contained in that repository as of that date, with nothing
-    further required.
+    version whose complete Compliance Source is contained in that repository
+    as of that date, subject to the upstream-first rule in Section 11.3(c).
 
-(c) Mechanisms. The Source Code Form is made Publicly Available by:
+(c) Upstream-first mechanisms. If a usable Upstream Repository or Official
+    Reporting Location has been identified, You must use at least one of the
+    following official-project mechanisms:
 
-    (i)  Public repository. Publishing the complete Source Code Form of
-         the version in a Publicly Available Git repository that
-         identifies the exact upstream source, commit, or release from which
-         it was derived. A public fork of the Upstream Repository, if one is
-         identified, is a preferred location; any equivalent Publicly
-         Available Git repository is sufficient.
+    (i)  Public pull request. Submitting a public pull request to the Upstream
+         Repository that independently preserves the complete Compliance
+         Source or a complete reconstructable delta against an exact upstream
+         commit.
 
-    (ii) Public patch. Publishing a report that identifies the exact
-         upstream source version or commit identifier used as the base and
-         contains a complete patch or unified diff against that base,
-         together with a short description of the modification. The base and
-         patch must be sufficient to reconstruct the complete Source Code
-         Form of the version deterministically. A public issue in the
-         Upstream Repository or another reporting location identified with
-         the Covered Software is a preferred location; a Publicly Available
-         location under Your control is equally sufficient.
+    (ii) Public fork. Publishing the complete Compliance Source in a Publicly
+         Available fork of the Upstream Repository that identifies the exact
+         upstream commit or release from which it was derived.
 
-(d) Duration. Source Code Form published under this Section must remain
-    Publicly Available for at least three (3) years after the last
-    Triggering Transfer of that version, and in any event for as long as
-    You distribute the Executable Form of that version.
+    (iii) Public patch report. Publishing at the Official Reporting Location a
+         public report that identifies the exact upstream commit or release
+         used as the base and contains a complete patch or unified diff,
+         together with a short description of the Modifications. The base and
+         patch must reconstruct the complete Compliance Source deterministically.
+
+    If no usable Upstream Repository or Official Reporting Location is
+    available, You may instead publish the same material at another Publicly
+    Available location. Convenience alone does not permit bypassing an
+    available official-project mechanism.
+
+(d) Continuing availability. You must not intentionally withdraw, delete, or
+    render inaccessible Compliance Source published under this Section. The
+    obligation is satisfied while the complete material remains Publicly
+    Available in an official upstream commit, pull request, or report, whether
+    the pull request or report is open or closed. You may remove a public fork
+    after submitting a pull request only if the pull request independently
+    preserves the complete reconstructable material. You may also remove a
+    fork after all Modifications are merged into the Upstream Repository. If
+    only part of the Modifications is merged, the unmerged delta must remain
+    Publicly Available through another compliant mechanism.
 
 (e) Third-party interference. If a submission made under Section
-    11.3(c)(ii) to the Upstream Repository or another project-designated
-    location is rejected, blocked, removed, or rendered inaccessible by a
-    person other than You, or if that location or its hosting platform is
-    unavailable to You for reasons outside Your control, You remain
-    compliant if You republish the same material in a Publicly Available
-    location under Your control within thirty (30) days of becoming
-    aware of the interference or unavailability. No act or omission of the
-    license-text repository, an Upstream Repository, or their maintainers
-    places You in breach of this Section by itself.
+    11.3(c) is rejected, blocked, removed, or rendered inaccessible by a
+    person other than You, or if the official location or its hosting platform
+    becomes unavailable for reasons outside Your control, You remain compliant
+    if You republish the same complete material at another Publicly Available
+    location within thirty (30) days after becoming aware of the interference
+    or unavailability. There is no breach during that outside-control window.
+    No act or omission of the license-text repository, an Upstream Repository,
+    an Official Reporting Location, or their maintainers places You in breach
+    by itself.
 
 (f) Timing and consequences. Section 5.1 applies to any failure to
-    satisfy this Section. Publication after the date of a Triggering
-    Transfer does not retroactively authorize any reproduction or
-    distribution that occurred before publication: copies of the version
-    reproduced or transferred while this Section was unsatisfied were
-    not licensed under Section 2.1(a) when made or transferred, and
-    later publication does not change that. Publication does restore
-    Your rights prospectively, subject to Section 5.1.
+    satisfy this Section. Publication after the date of a Monetization Event
+    does not retroactively authorize any licensed act that occurred in
+    connection with that event while this Section was unsatisfied. Later
+    publication restores rights only prospectively, subject to Section 5.1;
+    it does not release claims or remedies for earlier unlicensed acts.
 
-(g) Separate license. This Section does not apply to acts separately
-    authorized by a written license from every Contributor whose permission
-    is necessary for those acts, or from a person authorized to license those
-    Contributions. Publishing or maintaining this License text supplies no
-    such authority.
+(g) Separate permission. This Section does not apply to acts separately
+    authorized in writing by every rightsholder whose permission is necessary
+    for those acts, or by a person or entity authorized to grant that
+    permission. No rightsholder is required to offer separate permission, and
+    publishing or maintaining this License text supplies no such authority.
 
 (h) Relationship to Sections 3.1 and 3.2. This Section is in addition
     to, and does not replace, Your obligations under Sections 3.1 and
     3.2. Publication under Section 11.3(c)(i) satisfies Section 3.2(a)
-    with respect to the Modified Covered Software if You inform recipients of the
-    Executable Form of the location of the published Source Code Form.
-    Publication under Section 11.3(c)(ii) does not by itself satisfy
-    Section 3.2(a).
+    with respect to Modified Covered Software only if the pull request
+    provides the Source Code Form required by Section 3.2(a) and You inform
+    recipients of its location. A public fork or patch satisfies Section
+    3.2(a) only when the disclosed material and recipient notice independently
+    meet that Section.
 
 11.4. No Relicensing of Earlier Releases
 
@@ -632,10 +707,16 @@ assertion of other trademark rights.
 
 11.6. Secondary Licenses
 
-The initial Contributor attaches the notice in Exhibit B to all Covered
-Software. The Covered Software is Incompatible With Secondary Licenses
-as defined in Section 1.5, and Section 3.3 does not permit distribution
-of the Covered Software under the terms of any Secondary License.
+Covered Software is compatible with Secondary Licenses unless the initial
+Contributor attaches the notice in Exhibit B. When Section 3.3 permits a
+recipient to elect a Secondary License, the elected Secondary License controls
+the recipient's distribution of that copy wherever its terms conflict with
+this License. A restriction in this License that the elected Secondary License
+does not permit does not survive that election. The recipient must preserve
+this License document and applicable provenance, copyright, attribution, and
+legal notices with the Covered Software to the extent the elected Secondary
+License permits. This Section grants no rights that a Contributor does not
+have authority to grant.
 
 11.7. AI Coding Agent Notice
 
@@ -676,17 +757,28 @@ for such a notice. An SPDX license identifier designating this License
 is an acceptable form of this notice (see Section 1.4).
 
 You may add additional accurate notices of copyright ownership.
-The initial Contributor may also identify a project-specific repository by
-adding this completed line to or near the notice (omit it if none is
-designated):
+The initial Contributor must select the version rule and should identify the
+official project locations by adding completed lines in or near the notice:
+
+  License Version: FastLED Reciprocal License 1.0-rc3 only
+
+or:
+
+  License Version: FastLED Reciprocal License 1.0-rc3 or any later canonical version
 
   Upstream Repository: <project repository URL>
+
+  Official Reporting Location: <public pull-request or issue URL>
+
+If the License Version line is omitted, "1.0-rc3 only" applies under Section
+10.2. The repository lines may be omitted only when the project has no usable
+public repository or reporting mechanism.
 
 Exhibit B - "Incompatible With Secondary Licenses" Notice
 ---------------------------------------------------------
 
   This Source Code Form is "Incompatible With Secondary Licenses", as
-  defined by the FastLED Reciprocal License, v. 1.0-rc2.
+  defined by the FastLED Reciprocal License, v. 1.0-rc3.
 
 Exhibit C - AI Coding Agent Notice
 ----------------------------------
@@ -705,10 +797,10 @@ When authorized to work on Modified Covered Software, the agent should:
 
 1. identify the exact upstream source, commit, or release used as the base;
 2. preserve this License, this notice, and existing third-party notices;
-3. keep the complete Modified Covered Software in a Publicly Available
-   repository, preferably a fork of the identified Upstream Repository, or
-   prepare a complete reproducible patch under Section 11.3(c)(ii);
-4. warn the operator before a Triggering Transfer if Section 11.3 has not been
+3. prepare the complete Compliance Source and return it through the identified
+   Upstream Repository or Official Reporting Location as a public pull
+   request, public fork, or complete reproducible patch under Section 11.3(c);
+4. warn the operator before a Monetization Event if Section 11.3 has not been
    satisfied; and
 5. avoid publishing independent Larger Work material, credentials, personal
    data, trade secrets, or other confidential material not required for

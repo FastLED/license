@@ -2,13 +2,14 @@ schema_version = 1
 old_license_ids = [
   "LicenseRef-FastLED-Reciprocal-1.0",
   "LicenseRef-FastLED-Reciprocal-1.0-rc1",
+  "LicenseRef-FastLED-Reciprocal-1.0-rc2",
 ]
 
 [license]
-id = "LicenseRef-FastLED-Reciprocal-1.0-rc2"
-header_version = 3
+id = "LicenseRef-FastLED-Reciprocal-1.0-rc3"
+header_version = 4
 ai_document = "LICENSE-AI-AGENT-INSTRUCTIONS.md"
-ai_document_sha256 = "07b4400299f67dad4bf49de5f3e2ee5c19daf2d95fc0800e0e07987993c66a13"
+ai_document_sha256 = "51a0ef022d3ade2ff0b7412aff9db9d33adc954d9dbfb0402c11037ad6bf7603"
 
 [profiles.release]
 roots = ["src"]

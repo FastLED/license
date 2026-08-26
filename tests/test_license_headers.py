@@ -15,7 +15,7 @@ def write_policy(
     root: Path,
     *,
     old_ids: tuple[str, ...] = (),
-    license_id: str = "LicenseRef-FastLED-Reciprocal-1.0-rc2",
+    license_id: str = "LicenseRef-FastLED-Reciprocal-1.0-rc3",
     ai_document: str = "LICENSE-AI-AGENT-INSTRUCTIONS.md",
 ) -> subject.Policy:
     policy_path = root / "header-policy.toml"
@@ -73,7 +73,7 @@ def test_bom_shebang_encoding_and_mode_are_preserved(tmp_path: Path) -> None:
     assert subject.update_file(subject.classify(source, policy), policy)
     updated = source.read_bytes()
     assert updated.startswith(subject.UTF8_BOM + b"#!/usr/bin/env python3\n# coding: utf-8\n")
-    assert b"# SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0-rc2" in updated
+    assert b"# SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0-rc3" in updated
     if os.name != "nt":
         assert stat.S_IMODE(source.stat().st_mode) == 0o744
 
@@ -281,13 +281,20 @@ def test_artifact_manifest_matches_files() -> None:
         assert hashlib.sha256((root / relative).read_bytes()).hexdigest() == expected
 
 
-def test_rc2_identifiers_and_agent_notice_are_consistent() -> None:
+def test_rc3_identifiers_and_agent_notice_are_consistent() -> None:
     root = Path(__file__).parents[1]
     license_text = (root / "LICENSE").read_text(encoding="utf-8")
-    license_id = "LicenseRef-FastLED-Reciprocal-1.0-rc2"
-    assert "FastLED Reciprocal License, Version 1.0-rc2" in license_text
+    license_id = "LicenseRef-FastLED-Reciprocal-1.0-rc3"
+    assert "FastLED Reciprocal License, Version 1.0-rc3" in license_text
     assert license_id in license_text
-    assert 'defined by the FastLED Reciprocal License, v. 1.0-rc2.' in license_text
+    assert 'defined by the FastLED Reciprocal License, v. 1.0-rc3.' in license_text
+    assert '"Monetization Event" means' in license_text
+    assert "Triggering Transfer" not in license_text
+    assert "Public pull request." in license_text
+    assert "Public fork." in license_text
+    assert "Public patch report." in license_text
+    assert "A restriction in this License that the elected Secondary License" in license_text
+    assert "Changing this License document is not permitted under this License" in license_text
     for name in ("NOTICE-TEMPLATE.txt", "NOTICE-TEMPLATE-MIT-LEGACY.txt"):
         assert license_id in (root / name).read_text(encoding="utf-8")
 
