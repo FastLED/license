@@ -7,6 +7,7 @@
 
 import argparse
 import fnmatch
+import hashlib
 import os
 import platform
 import re
@@ -47,6 +48,7 @@ RIPGREP_ASSETS: dict[tuple[str, str], tuple[str, str]] = {
 }
 MANAGED_MARKERS = (
     "SPDX-License-Identifier:",
+    "AI-Notice:",
     "AI-Policy:",
     "not a license notice; removable per LICENSE Section 11.7",
     # Legacy header-version-1 marker lines, still recognized so previously
@@ -82,6 +84,7 @@ class Policy:
     license_id: str
     header_version: int
     ai_document: str
+    ai_document_sha256: str
     roots: tuple[str, ...]
     extensions: tuple[str, ...]
     comments: dict[str, str]
@@ -152,12 +155,26 @@ def load_policy(path: Path, profile: str) -> Policy:
     missing_comments = sorted(set(extensions) - set(comments))
     if missing_comments:
         raise ValueError(f"extensions lack comment syntax: {', '.join(missing_comments)}")
+    ai_document = str(license_config["ai_document"])
+    ai_document_sha256 = str(license_config["ai_document_sha256"]).lower()
+    ai_path = Path(ai_document)
+    if (
+        not ai_document
+        or bool(re.match(r"^[A-Za-z]:[\\/]", ai_document))
+        or bool(ai_path.anchor)
+        or ai_path.is_absolute()
+        or ".." in ai_path.parts
+    ):
+        raise ValueError("ai_document must be a normalized repository-relative path")
+    if not re.fullmatch(r"[0-9a-f]{64}", ai_document_sha256):
+        raise ValueError("ai_document_sha256 must be a lowercase SHA-256 digest")
     return Policy(
         path=path,
         root=path.parent,
         license_id=str(license_config["id"]),
         header_version=int(license_config["header_version"]),
-        ai_document=str(license_config["ai_document"]),
+        ai_document=ai_document,
+        ai_document_sha256=ai_document_sha256,
         roots=roots,
         extensions=extensions,
         comments=comments,
@@ -279,8 +296,7 @@ def expected_lines(policy: Policy, extension: str) -> list[str]:
     prefix = policy.comments[extension]
     return [
         f"{prefix} SPDX-License-Identifier: {policy.license_id}",
-        f"{prefix} AI-Policy: {policy.ai_document} (informational, non-binding;",
-        f"{prefix} not a license notice; removable per LICENSE Section 11.7)",
+        f"{prefix} AI-Notice: {policy.ai_document} (required by LICENSE Section 11.7)",
     ]
 
 
@@ -445,7 +461,7 @@ def fingerprint(policy: Policy, profile: str, command: str) -> int:
         for name in (
             policy.path.name,
             "LICENSE",
-            "LICENSE-AI-AGENT-INSTRUCTIONS.md",
+            policy.ai_document,
             "NOTICE-TEMPLATE.txt",
             "LEGAL-REVIEW.md",
             "ai-policy.toml",
@@ -518,6 +534,20 @@ def review_gate(policy: Policy) -> str | None:
     )
 
 
+def required_notice_error(policy: Policy) -> str | None:
+    """Return an error when the mandatory Section 11.7 notice is absent."""
+    notice = policy.root / policy.ai_document
+    if not notice.is_file():
+        return f"required AI Coding Agent Notice is missing: {policy.ai_document}"
+    actual = hashlib.sha256(notice.read_bytes()).hexdigest()
+    if actual != policy.ai_document_sha256:
+        return (
+            f"required AI Coding Agent Notice does not match the canonical digest: "
+            f"{policy.ai_document} (expected {policy.ai_document_sha256}, got {actual})"
+        )
+    return None
+
+
 def _print_findings(findings: list[Finding]) -> None:
     counts: dict[State, int] = {state: 0 for state in State}
     for finding in findings:
@@ -530,6 +560,10 @@ def _print_findings(findings: list[Finding]) -> None:
 
 def execute(args: argparse.Namespace) -> int:
     policy = load_policy(Path(args.policy), args.profile)
+    notice_error = required_notice_error(policy)
+    if notice_error:
+        print(notice_error, file=sys.stderr)
+        return 1
     use_cache = not args.no_cache and args.command == "check"
     if use_cache and fingerprint(policy, args.profile, "check") == 1:
         print(f"license headers compliant (cached, profile={args.profile})")

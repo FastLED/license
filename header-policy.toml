@@ -1,10 +1,14 @@
 schema_version = 1
-old_license_ids = ["LicenseRef-FastLED-Reciprocal-1.0"]
+old_license_ids = [
+  "LicenseRef-FastLED-Reciprocal-1.0",
+  "LicenseRef-FastLED-Reciprocal-1.0-rc1",
+]
 
 [license]
-id = "LicenseRef-FastLED-Reciprocal-1.0-rc1"
-header_version = 2
+id = "LicenseRef-FastLED-Reciprocal-1.0-rc2"
+header_version = 3
 ai_document = "LICENSE-AI-AGENT-INSTRUCTIONS.md"
+ai_document_sha256 = "07b4400299f67dad4bf49de5f3e2ee5c19daf2d95fc0800e0e07987993c66a13"
 
 [profiles.release]
 roots = ["src"]
@@ -29,22 +33,8 @@ js = "//"
 ts = "//"
 mts = "//"
 
-# Integrations must replace these examples with a reviewed ownership inventory.
+# Integrations must replace this example with a reviewed project inventory.
 [[exclusions]]
 pattern = "src/third_party/**"
 reason = "Vendored or separately licensed source; preserve upstream notices."
 provenance = "Per-component LICENSE/NOTICE files under src/third_party."
-
-[[exclusions]]
-pattern = "src/fl/fx/2d/animartrix.hpp"
-reason = "Animartrix-derived implementation remains under its existing MIT treatment."
-provenance = "Existing file notice and FastLED ownership audit."
-[[exclusions]]
-pattern = "src/fl/fx/2d/animartrix_detail.h"
-reason = "Animartrix-derived implementation remains under its existing MIT treatment."
-provenance = "Existing file notice and FastLED ownership audit."
-
-[[exclusions]]
-pattern = "src/fl/fx/2d/animartrix_detail/**"
-reason = "Animartrix-derived implementation remains under its existing MIT treatment."
-provenance = "Existing file notice and FastLED ownership audit."

@@ -1,73 +1,105 @@
-# FastLED licensing
+# FastLED Reciprocal License
 
-This repository is the versioned source of truth for the proposed **FastLED
-Reciprocal License 1.0**, its AI-agent guidance, and the source-header
-compliance tooling used by FastLED releases.
+This repository publishes the canonical text and supporting materials for the
+proposed **FastLED Reciprocal License 1.0**. Despite its name, the license is a
+general-purpose instrument that may be applied to software from any project.
+It is not limited to the FastLED codebase.
 
 > [!IMPORTANT]
-> The current text is a release candidate, self-identified by its SPDX
-> identifier `LicenseRef-FastLED-Reciprocal-1.0-rc1`. It must not be
-> described as OSI-approved, as the Mozilla Public License 2.0, or as legal
-> advice. The bare identifier `LicenseRef-FastLED-Reciprocal-1.0` is
-> reserved for the attorney-reviewed text, and the header tool refuses to
-> stamp it until `LEGAL-REVIEW.md` records approval. FastLED remains
-> MIT-licensed until a FastLED release explicitly adopts a reviewed
-> version.
+> The current text is release candidate `1.0-rc2`, identified as
+> `LicenseRef-FastLED-Reciprocal-1.0-rc2`. It is preliminary legal drafting,
+> is not OSI-approved, and has not completed the attorney gate in
+> `LEGAL-REVIEW.md`. The identifier without an `-rc` suffix is reserved for a
+> reviewed release.
+
+## License text and software rights are separate
+
+The license does not require a universal "owner." Zachary Vorhies currently
+maintains the canonical license-text repository and its version history. That
+text-maintenance role does not make Zach, FastLED, or this repository the
+owner, commercial licensor, or enforcement claimant for software that another
+project places under the license.
+
+The roles are intentionally separate:
+
+| Role | Authority |
+|---|---|
+| Canonical text maintainer | Publishes and versions the reusable license text |
+| Adopting rights holder or Contributor | Applies the license and grants rights in its Contributions |
+| Commercial licensor | Grants a separate license only when independently authorized for the relevant software |
+| Enforcement claimant | Enforces only rights or promises for which it has the required ownership, authorization, or standing |
+
+Publishing or copying `LICENSE` does not transfer software copyrights or
+appoint the text maintainer to enforce an adopter's code.
 
 ## Design
 
-The license is a single self-contained instrument: a modified Mozilla
-Public License 2.0 (renamed under MPL §10.3, with FastLED as license
-steward) whose Section 11 adds the FastLED Additional Terms. It preserves
-file-level copyleft and the Larger Work boundary — independent
-applications, sketches, firmware logic, and products may remain
-proprietary — and adds one condition: **when a modified FastLED version is
-first commercially transferred, its complete source must already be
-public** (public fork/repository, or a public base-commit + full-diff
-patch).
+The license is one self-contained instrument derived from Mozilla Public
+License 2.0 under MPL Section 10.3. It preserves a file-level Covered Software
+boundary and adds a commercial-transfer condition: when a person commercially
+transfers a modified version, the complete Modified Covered Software must
+already be publicly available through a repository or reproducible patch.
+Independent files in a Larger Work may remain proprietary under Section 11.2.
 
-The timing model is deliberate: the development period before first sale
-*is* the compliance window. Working in a public fork from the start is
-continuous compliance with nothing further owed (Section 11.3(b)). There
-is no post-sale cure that rewrites history — units reproduced or shipped
-before publication were never licensed (Section 11.3(f)) — while
-publication restores rights going forward under Section 5.1. The trigger
-is per modified version and binds the party who created or commissioned
-the modification, never downstream resellers, contract manufacturers, or
-lessees (Section 11.1).
+An adopting project may identify its own optional **Upstream Repository** in
+or with the Exhibit A notice. That project-specific designation does not alter
+the canonical license text and does not make the repository maintainer a
+rights holder.
 
-Two deliberate trade-offs, recorded in `LEGAL-REVIEW.md` for attorney
-ratification: Exhibit B is attached, so the code cannot be relicensed
-under GPL-family Secondary Licenses (closing the bypass that would
-otherwise make Section 11.3 optional); and Section 11.3 conditions only
-the copyright grant, not contributors' patent grants.
+A separate commercial license is optional and project-specific. Section
+11.3(g) recognizes only written authorization from the Contributors whose
+permission is needed, or from someone independently authorized to license
+their Contributions. The canonical license repository cannot sell exceptions
+for third-party software merely because it publishes this text.
+
+The generic `LICENSE-AI-AGENT-INSTRUCTIONS.md` notice is part of the license
+and must be included by every adopting project under Section 11.7(a). The
+inclusion obligation binds the human or legal entity exercising the copyright
+license. The notice does not pretend that an automated agent is a contracting
+party or independently subject to damages.
 
 ## Contents
 
-- `LICENSE` — FastLED Reciprocal License 1.0-rc1: the complete,
-  self-contained instrument (modified MPL 2.0 + Section 11 + Exhibits).
-- `MPL-2.0.txt` — the unmodified MPL 2.0 base text, retained only for
-  provenance comparison (see `PROVENANCE.md`). Not part of the license.
-- `LICENSE-AI-AGENT-INSTRUCTIONS.md` — informational, non-binding
-  guidance for AI coding agents; authorization-first (see LICENSE §11.7).
-- `ai-policy.toml` — machine-readable summary of that guidance.
-- `LICENSE-MIT-LEGACY` — the historical FastLED MIT license. Ship it in
-  every distributed artifact, not just the repository.
-- `NOTICE-TEMPLATE.txt` — canonical three-line source header (SPDX line +
-  removable AI-policy reference).
-- `NOTICE-TEMPLATE-MIT-LEGACY.txt` — additive header variant for files
-  with surviving MIT-era third-party authorship.
-- `LEGAL-REVIEW.md` — review gate, applied decisions, attorney checklist.
-- `paralegal-research/` — indexed, preliminary legal research, reusable
-  authority notes, research workflow, and future-question backlog.
-- `header-policy.toml` and `header-policy.schema.json` — policy format and
-  an integration example.
-- `tools/license_headers.py` — one-command inventory, check, update, and
-  apply tool.
+- `LICENSE` — current reusable release-candidate text.
+- `MPL-2.0.txt` — unmodified MPL 2.0 source retained for provenance; it is not
+  incorporated into the license.
+- `PROVENANCE.md` — derivation and immutable-version records.
+- `LEGAL-REVIEW.md` — attorney-review gate and unresolved drafting decisions.
+- `paralegal-research/` — license-agnostic research corpus for attorney review.
+- `NOTICE-TEMPLATE.txt` — optional source notice for adopters.
+- `header-policy.toml`, `header-policy.schema.json`, and
+  `tools/license_headers.py` — optional example tooling for repositories that
+  want automated source-file notices.
+- `LICENSE-AI-AGENT-INSTRUCTIONS.md` — required generic AI Coding Agent Notice,
+  also reproduced as Exhibit C and incorporated by Section 11.7.
+- `ai-policy.toml` — machine-readable summary of the required notice and its
+  legal boundary.
+- `LICENSE-MIT-LEGACY` and `NOTICE-TEMPLATE-MIT-LEGACY.txt` — FastLED migration
+  examples, not requirements imposed on other adopters.
 
-## Header tool
+## Applying the license to a project
 
-Only [uv](https://docs.astral.sh/uv/) is required:
+1. Obtain project-specific legal review and confirm that the people applying
+   the license have sufficient rights in the software they are offering.
+2. Copy an immutable reviewed license release into the adopting repository.
+3. Attach the Exhibit A notice or the corresponding SPDX identifier to the
+   Covered Software. The optional Upstream Repository line may point to that
+   project's own public repository.
+4. Include `LICENSE-AI-AGENT-INSTRUCTIONS.md` as the complete generic Exhibit C
+   notice. It is required for every adopting project, whether or not that
+   project expects AI-assisted development.
+5. Preserve third-party notices and licenses. Do not overwrite separately
+   licensed or generated material with a project-wide header.
+6. If the project offers commercial licenses, publish its own contact and
+   authorization process separately from the canonical license text.
+
+No change to the FastLED software repository is necessary to draft, publish,
+study, or use this license text. FastLED remains under its existing license
+unless and until the FastLED project separately adopts a reviewed version.
+
+## Optional header tool
+
+Repositories that choose to use the example tool need only [uv](https://docs.astral.sh/uv/):
 
 ```console
 uv run tools/license_headers.py inventory --profile release
@@ -76,64 +108,18 @@ uv run tools/license_headers.py update --profile release
 uv run tools/license_headers.py apply --profile release
 ```
 
-The tool uses a compatible system ripgrep or downloads a pinned, SHA-256
-verified ripgrep with `zccache download`. Successful checks are
-fingerprinted with `zccache fp`, so unchanged runs do not invoke ripgrep
-again. Policy, tool, license-text, and review-status changes invalidate
-the same fingerprint as source changes.
+The included policy is a starting point, not part of the legal instrument.
+Each adopter must replace its roots, exclusions, and provenance while
+retaining the required generic AI Coding Agent Notice. The tool refuses to stamp the final
+non-`-rc` identifier until `LEGAL-REVIEW.md` records approval.
 
-`update` is fail-closed: it inserts missing managed notices and replaces
-only known older FastLED notices (including the previous four-line
-`-1.0` header, which upgrades to the current three-line `-rc1` form).
-Unknown SPDX identifiers, malformed legal preambles, and unclassified
-source are reported for review. Exclusions require a reason and
-provenance. Rewriting is atomic and preserves BOMs, shebangs, encoding
-lines, newline style, final-newline state, and file mode. `update` and
-`apply` additionally refuse to stamp a non-`-rc` identifier until
-`LEGAL-REVIEW.md` records `Status: APPROVED`.
-
-## Adoption checklist (before FastLED adopts a reviewed release)
-
-1. **Attorney review** per `LEGAL-REVIEW.md`; ratify the recorded
-   decisions; tag the reviewed text and switch the policy id to the
-   bare identifier.
-2. **Ownership audit before the first `apply` in FastLED**: build a
-   per-file provenance map (git blame by surviving lines); files with
-   material third-party MIT-era authorship take the additive
-   `NOTICE-TEMPLATE-MIT-LEGACY.txt` header instead of a replacement —
-   MIT's notice-preservation condition is what the relicensing authority
-   rests on.
-3. **Inbound=outbound**: land DCO sign-off and a `CONTRIBUTING.md`
-   statement in the FastLED repository before adoption so post-adoption
-   contributions have a clear inbound license.
-4. **Register the copyright** in each FastLED release with the U.S.
-   Copyright Office within the 17 U.S.C. §412 windows — statutory
-   damages and fee-shifting are where the license's leverage lives.
-5. **Tooling ecosystem**: submit the reviewed text to the SPDX License
-   List (`spdx/license-list-XML`; the BUSL-1.1 precedent shows non-OSI
-   status is not disqualifying), to ScanCode LicenseDB, and to the FOSSA
-   and Black Duck known-license databases; host the canonical text at a
-   permanent URL.
-6. **Announcement playbook** (per the HashiCorp/Terraform lesson):
-   public rationale post well in advance, a hard version boundary with
-   historical releases staying MIT (LICENSE §11.4), and the header
-   rewrite as one atomic, reviewable commit.
-7. Optionally, contact the top historical contributors by surviving-line
-   count for written relicensing consent — not legally required under
-   the MIT sublicensing path, but it converts the strongest available
-   objection into a non-event.
-
-## Versioning and adoption
-
-Reviewed releases are immutable tags. An adopting repository copies the
-license documents and tool, records the source tag/commit and SHA-256
-manifest, and never follows mutable legal text during a build or release.
-The initial reviewed release is intended to be `v1.0.0`; no such reviewed
-release exists until legal approval is recorded in `LEGAL-REVIEW.md`.
+Reviewed releases should be immutable tags with a recorded content digest.
+Adopters should copy a selected release rather than follow mutable legal text
+during a build or release.
 
 ## References
 
 - [Mozilla Public License 2.0](https://www.mozilla.org/MPL/2.0/)
 - [SPDX custom LicenseRef syntax](https://spdx.github.io/spdx-spec/v2.3/using-SPDX-short-identifiers-in-source-files/)
-- AI first-pass legal review: issues
-  [#2](https://github.com/FastLED/license/issues/2)–[#8](https://github.com/FastLED/license/issues/8)
+- Preliminary research and attorney-review issues are tracked in this
+  repository's GitHub issue list.

@@ -3,6 +3,30 @@
 These instructions apply throughout `paralegal-research/`. Read them before
 doing legal research for this repository.
 
+The FastLED Reciprocal License is reusable text, not a project ownership
+vehicle. Keep these roles distinct in every memo and answer:
+
+- canonical text maintainer or steward: publishes and versions license text;
+- Contributor or applicable rights holder: grants rights in particular
+  Covered Software;
+- commercial licensor: grants separate permission only when independently
+  authorized for the relevant software; and
+- enforcement claimant: must establish the standing required for the
+  particular claim.
+
+Never infer software ownership, commercial-licensing authority, beneficiary
+status, or enforcement standing from maintenance of this license repository.
+Do not route a general license-text question into a FastLED codebase ownership
+audit unless the requested scenario specifically concerns FastLED adoption or
+enforcement.
+
+Section 11.7 and Exhibit C make the generic AI Coding Agent Notice part of the
+draft License and require adopters to include it. Do not classify the notice as
+an optional FastLED-only policy. Separately analyze (a) the human or entity's
+license condition to include the notice and (b) whether any sentence addressed
+to an automated agent could create obligations or remedies beyond the express
+text.
+
 Read `TAXONOMY.md` before assigning metadata or describing the weight of an
 authority. For systematic research, use `templates/SEARCH-LOG.md` and preserve
 negative searches and unresolved leads.
@@ -64,7 +88,9 @@ Prefer sources in this order:
 
 1. Operative repository text and version history.
 2. Statutes, regulations, court opinions, orders, and dockets.
-3. Official license text and materials from the license steward.
+3. Official license text and materials from the canonical text publisher or
+   steward, remembering that this role does not establish rights in software
+   governed by the text.
 4. Reputable secondary legal analysis for context and leads.
 5. Community posts or anonymous material only as leads to stronger sources.
 

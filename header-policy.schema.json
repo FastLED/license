@@ -8,11 +8,12 @@
     "schema_version": {"const": 1},
     "license": {
       "type": "object",
-      "required": ["id", "header_version", "ai_document"],
+      "required": ["id", "header_version", "ai_document", "ai_document_sha256"],
       "properties": {
         "id": {"type": "string", "pattern": "^LicenseRef-[A-Za-z0-9.-]+$"},
         "header_version": {"type": "integer", "minimum": 1},
-        "ai_document": {"type": "string", "minLength": 1}
+        "ai_document": {"type": "string", "minLength": 1},
+        "ai_document_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
       },
       "additionalProperties": false
     },

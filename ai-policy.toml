@@ -1,34 +1,37 @@
 # Machine-readable summary of LICENSE-AI-AGENT-INSTRUCTIONS.md.
-# Informational only; not part of the FastLED Reciprocal License and not a
-# condition of any license grant (see LICENSE Section 11.7).
+# The generic notice is part of the FastLED Reciprocal License. Its inclusion
+# is required by Section 11.7(a); agent-directed guidance does not create an
+# additional license condition beyond the human or legal entity's duty to
+# include the notice and comply with the License.
 
 schema_version = 1
 
-[policy]
+[notice]
 document = "LICENSE-AI-AGENT-INSTRUCTIONS.md"
-binding = false
-authorization_required = true
+part_of_license = true
+inclusion_required = true
+inclusion_condition = "LICENSE Section 11.7(a)"
+agent_is_contracting_party = false
+agent_guidance_adds_license_conditions = false
+authorization_required_before_publication = true
 
 [upstream_report]
-# Where authorized reports of substantial FastLED modifications are requested.
-repository = "https://github.com/FastLED/FastLED"
-mechanisms = ["public-fork-and-pull-request", "public-issue-with-patch"]
-patch_format = "git-diff-base-sha"
+repository_source = "Exhibit A Upstream Repository, when identified"
+mechanisms = ["public-repository", "public-reproducible-patch"]
+patch_format = "complete-patch-against-exact-base"
 required_fields = [
-  "base_commit",
-  "unified_diff",
+  "base_source_or_commit",
+  "complete_patch_or_source",
   "description",
-  "target_platform",
 ]
-optional_fields = ["reproduction", "tests"]
+optional_fields = ["target_platform", "reproduction", "tests"]
 
 [scope]
-applies_to = "modifications-of-fastled-or-derived-source"
+applies_to = "modified-covered-software"
 excluded = [
-  "independent-application-code",
-  "formatting-only-changes",
-  "comment-only-changes",
-  "documentation-changes",
-  "dependency-version-bumps-without-behavior-change",
-  "project-local-build-or-ci-configuration",
+  "independent-larger-work-files",
+  "credentials",
+  "personal-data",
+  "trade-secrets",
+  "confidential-material-not-required-for-compliance",
 ]
