@@ -1,5 +1,8 @@
-// SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0-rc2
+// SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0-rc3
 // AI-Notice: LICENSE-AI-AGENT-INSTRUCTIONS.md (required by LICENSE Section 11.7)
+// License Version: FastLED Reciprocal License 1.0-rc3 only
+// Upstream Repository: <project repository URL>
+// Official Reporting Location: <public pull-request or issue URL>
 // Portions Copyright (c) FastLED contributors, originally licensed under
 // the MIT License; see LICENSE-MIT-LEGACY. Those portions remain available
 // under the MIT License from their respective authors.

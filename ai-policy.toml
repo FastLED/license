@@ -16,22 +16,31 @@ agent_guidance_adds_license_conditions = false
 authorization_required_before_publication = true
 
 [upstream_report]
-repository_source = "Exhibit A Upstream Repository, when identified"
-mechanisms = ["public-repository", "public-reproducible-patch"]
+repository_source = "Exhibit A Upstream Repository and Official Reporting Location"
+mechanisms = ["public-pull-request", "public-fork", "public-reproducible-patch"]
 patch_format = "complete-patch-against-exact-base"
 required_fields = [
   "base_source_or_commit",
-  "complete_patch_or_source",
+  "complete_compliance_source_or_patch",
   "description",
 ]
 optional_fields = ["target_platform", "reproduction", "tests"]
+
+[monetization]
+trigger = "monetization-event-involving-modified-covered-software"
+disclosure_deadline = "on-or-before-first-event-for-each-version"
+upstream_first = true
+revenue_threshold = "none"
+private_nonmonetized_development_allowed = true
 
 [scope]
 applies_to = "modified-covered-software"
 excluded = [
   "independent-larger-work-files",
   "credentials",
+  "private-keys",
   "personal-data",
-  "trade-secrets",
+  "security-secrets",
+  "unlicensable-third-party-material",
   "confidential-material-not-required-for-compliance",
 ]

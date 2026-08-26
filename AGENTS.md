@@ -9,13 +9,14 @@ licensing decision.
 Treat this repository like a repository of reusable license text. It does not
 need a universal software owner. A maintainer or steward of the canonical text
 controls text publication and versioning only; that role does not by itself
-make the person a copyright owner, licensor, commercial licensor, beneficiary,
-or enforcement claimant for software placed under the license.
+make the person a copyright owner, licensor, separate-permission grantor,
+beneficiary, or enforcement claimant for software placed under the license.
 
 For every adoption or enforcement question, identify the applicable software
-Contributor or rights holder separately. A commercial-license exception can
-come only from the applicable Contributors or someone independently authorized
-by them. Do not investigate the ownership, contribution history, or source-file
+Contributor or rightsholder separately. Separate written permission can come
+only from all rightsholders whose authorization is necessary or from someone
+independently authorized by them; do not assume anyone must offer it. Do not
+investigate the ownership, contribution history, or source-file
 headers of the FastLED codebase merely because the license is named FastLED.
 Those facts are relevant only when the question specifically concerns FastLED
 adoption, FastLED rights, or enforcement involving FastLED software.
