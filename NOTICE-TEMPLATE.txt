@@ -1,2 +1,5 @@
 // SPDX-License-Identifier: LicenseRef-FastLED-Reciprocal-1.0-rc3
 // AI-Notice: LICENSE-AI-AGENT-INSTRUCTIONS.md (required by LICENSE Section 11.7)
+// License-Version: FastLED Reciprocal License 1.0-rc3 only
+// Upstream-Repository: <project repository URL>
+// Official-Reporting-Location: <public pull-request or issue URL>
